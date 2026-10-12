@@ -8,134 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400&display=swap">
-<style>
-  /* A ledger page: paper blocks, ruled rows, two stamps. No dark variant — ledger paper has none. */
-  :root {
-    --paper:     #EDF1E8;
-    --paper-2:   #E2E8DC;
-    --paper-row: #D9E0D2;
-    --ink:       #1C2B24;
-    --ink-soft:  #4C5B53;
-    --rule:      #8FA3C7;
-    --stamp-t:   #1F4E9C;
-    --stamp-a:   #8A5A1E;
-    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
-    color-scheme: light;
-  }
-
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--paper); color: var(--ink);
-    font-family: var(--serif); font-size: 18px; line-height: 1.6;
-    font-optical-sizing: auto; -webkit-font-smoothing: antialiased;
-  }
-  a { color: var(--stamp-t); text-underline-offset: 3px; }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--stamp-t); outline-offset: 2px; }
-  p { margin: 0 0 1rem; }
-  .note { font-size: 15px; color: var(--ink-soft); }
-
-  /* blocks: full-bleed, alternating paper; the background is the divider */
-  .block { padding: 80px 0; }
-  .block.alt { background: var(--paper-2); }
-  .in { max-width: 950px; margin: 0 auto; padding: 0 24px; }
-  p, .list, .steps, .say, .copyrow { max-width: 860px; }
-  @media (max-width: 640px) { .block { padding: 56px 0; } }
-
-  /* nav */
-  nav { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px 24px; margin: -48px 0 56px; }
-  nav .brand { font-weight: 600; font-size: 22.5px; color: var(--ink); text-decoration: none; }
-  nav .links { display: flex; gap: 8px 24px; flex-wrap: wrap; }
-  nav .links a { color: var(--ink); text-decoration: none; }
-  nav .links a:hover { text-decoration: underline; }
-  @media (max-width: 640px) { nav { margin: -32px 0 40px; } }
-
-  h1 { font-size: 55px; line-height: 1.1; font-weight: 600; margin: 0 0 8px; letter-spacing: -.01em; }
-  h2 { font-size: 35px; line-height: 1.2; font-weight: 600; margin: 0 0 24px; }
-  @media (max-width: 640px) { h1 { font-size: 44px; } h2 { font-size: 28px; } }
-  .tagline { font-size: 22.5px; color: var(--stamp-t); margin: 0 0 24px; }
-  .sub { font-size: 22.5px; line-height: 1.45; }
-
-  /* buttons — square; the stamp is the only rounded thing on the page */
-  .btn, button {
-    display: inline-block; font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; text-align: center;
-    background: var(--stamp-t); color: var(--paper); border: 1.5px solid var(--stamp-t); border-radius: 0; padding: 12px 20px;
-  }
-  .btn.ghost, button.copy { background: transparent; color: var(--ink); border-color: var(--ink); }
-  button.copy { font-size: 15px; padding: 4px 12px; flex: none; }
-  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 32px 0 0; }
-
-  .say, .copyrow {
-    display: flex; gap: 12px; align-items: flex-start; justify-content: space-between;
-    background: var(--paper-row); padding: 8px 12px; margin: 8px 0;
-  }
-  .say span { font-style: italic; }
-  .copyrow code { font-family: var(--serif); font-size: 18px; overflow-wrap: anywhere; }
-
-  /* the ledger row */
-  .ledger { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
-  .ledger > li {
-    display: grid; grid-template-columns: 72px 1fr 180px 120px; grid-template-areas: "id claim signer basis";
-    gap: 4px 16px; padding: 14px 8px; border-bottom: 1px solid var(--rule); align-items: baseline;
-  }
-  .ledger > li:nth-child(even) { background: var(--paper-row); }
-  .ledger .id { grid-area: id; }
-  .ledger .claim { grid-area: claim; overflow-wrap: anywhere; }
-  .ledger .signer { grid-area: signer; font-size: 15px; color: var(--ink-soft); }
-  .ledger .basis { grid-area: basis; font-size: 15px; color: var(--ink-soft); }
-  .ledger.named > li { grid-template-columns: 8rem 1fr 160px 130px; }
-  .ledger.named .id { font-weight: 600; }
-  @media (max-width: 640px) {
-    .ledger > li { grid-template-columns: 72px 1fr 1fr; grid-template-areas: "id claim claim" ". signer basis"; }
-    .ledger.named > li { grid-template-columns: 1fr 1fr; grid-template-areas: "id id" "claim claim" "signer basis"; }
-  }
-  /* two rows side by side: the two-line layout at every width */
-  .ledger.compact > li { grid-template-columns: 72px 1fr 1fr; grid-template-areas: "id claim claim" ". signer basis"; }
-
-  .stamp {
-    display: inline-block; border: 1.5px solid currentColor; border-radius: 3px; padding: 2px 8px;
-    font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.3; transform: rotate(-2deg);
-  }
-  .stamp.t { color: var(--stamp-t); }
-  .stamp.a { color: var(--stamp-a); }
-
-  .list { margin: 0; padding-left: 1.2em; }
-  .list li { margin-bottom: 12px; }
-
-  /* five steps */
-  .steps { margin: 0; padding-left: 1.4em; }
-  .steps > li { margin-bottom: 24px; padding-left: 4px; }
-  .steps > li::marker { font-weight: 600; }
-  .steps p { margin: 0 0 8px; }
-
-  /* same claim, two outcomes */
-  .outcomes ol:not(.ledger) { margin: 16px 0 0; padding-left: 1.4em; }
-  .outcomes ol:not(.ledger) li { margin-bottom: 8px; }
-  .outcomes [role="tablist"] { margin-top: 24px; }
-  .close { font-size: 22.5px; line-height: 1.5; margin-top: 32px; }
-
-  /* pricing: tabs, then plan columns of one frame */
-  .lead { font-size: 22.5px; font-style: italic; margin-top: -12px; }
-  [role="tablist"] { display: flex; flex-wrap: wrap; gap: 8px 32px; margin: 32px 0 24px; }
-  [role="tab"] { background: none; border: 0; border-bottom: 2px solid transparent; color: var(--ink-soft); padding: 4px 0; font-size: 22.5px; }
-  [role="tab"][aria-selected="true"] { color: var(--ink); border-bottom-color: var(--stamp-t); }
-  .above { margin-bottom: 24px; }
-  .plans { display: grid; gap: 16px; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); }
-  @media (max-width: 860px) { .plans { grid-template-columns: 1fr; } }
-  .plan { border: 1px solid var(--rule); padding: 20px; display: flex; flex-direction: column; gap: 12px; }
-  .plan h3 { font-size: 22.5px; margin: 0; }
-  .plan .price { font-size: 28px; font-weight: 600; line-height: 1.2; margin: 0; }
-  .plan .price small { display: block; font-size: 15px; font-weight: 400; color: var(--ink-soft); margin-top: 4px; }
-  .plan .what { margin: 0; font-style: italic; }
-  #pricing-team .price { font-size: 22.5px; }
-  #pricing-organisation .plans { max-width: 720px; }
-  .plan ul { margin: 0; padding-left: 1.1em; font-size: 15px; flex: 1; }
-  .plan ul li { margin-bottom: 6px; }
-  .plan .btn { align-self: stretch; }
-  .plan .none { color: var(--ink-soft); padding: 12px 0; }
-  .example { margin-top: 24px; }
-
-  footer p { margin: 0 0 8px; }
-</style>
+<link rel="stylesheet" href="/site.css">
 </head>
 <body>
 
@@ -146,17 +19,18 @@
       <a class="brand" href="/">T-knowledge</a>
       <span class="links"><a href="#try">Try it</a><a href="/docs/">Docs</a><a href="#pricing">Pricing</a><a href="/privacy/">Privacy</a></span>
     </nav>
-    <h1>T-knowledge</h1>
-    <p class="tagline">truth · trust · traceable knowledge</p>
+    <h1>Knowledge Sovereignty</h1>
+    <p class="lede">The organisation decides what is knowledge. The AI proposes; a person signs.</p>
     <p class="sub">Data → information → knowledge. Data becomes information when it has structure — one idea, with names and dates. Information becomes knowledge when it can be trusted without checking again.</p>
-    <p>T-knowledge holds your information and your knowledge; your data stays where it is. Mail, CRM and files are not replaced — the store keeps the text read from a source and where the original is. A claim nobody can check yet is information, held as an [A]. It becomes knowledge, a [T], when it has <b>truth</b> — evidence anyone can open; <b>trust</b> — the name that signed it; <b>traceable</b> — the ids it rests on.</p>
-    <p><b>Sovereignty:</b> the store argues only from principles you hold, and only you sign. The gate shows it, at the moment of writing rather than at a review weeks later. The assistant drafts; a [T] takes your name. Retire a principle or withdraw evidence, and every [T] standing on it falls back to [A] — <i>needs review</i>. Nothing quietly stays true; nothing is thrown away.</p>
-    <p class="note">Personal store: free, live now. Team and organisation ledgers: set up on request.</p>
+    <dl class="three">
+      <div><dt>Truth.</dt><dd>Reasoned by a person or an AI agent.</dd></div>
+      <div><dt>Trust.</dt><dd>Signed by a human only.</dd></div>
+      <div><dt>Traceable.</dt><dd>A living system in which claims are promoted and demoted.</dd></div>
+    </dl>
+    <p><span class="tk">T</span>(truth-trust-traceable)<span class="tk">-knowledge</span> holds the organisation's information and knowledge; the data stays where it is. The store keeps what was read from a source, and where the original is. A claim nobody can check yet is an [A]. With all three it is a [T], and the gate decides that at the moment of writing, not in a review weeks later.</p>
     <div class="actions">
       <a class="btn" href="#try">Add to Claude</a>
-      <a class="btn ghost" href="#how">How it works</a>
     </div>
-    <div class="copyrow" style="margin-top:16px"><code id="u0">https://mcp.tknowledge.org/mcp</code><button class="copy" type="button" data-copy="u0">Copy</button></div>
   </div>
 </header>
 
@@ -164,7 +38,7 @@
 <!-- 2. Three ledgers -->
 <section class="block alt" aria-labelledby="ledgers">
   <div class="in">
-    <h2 id="ledgers">The ledgers follow the structure your organisation already has.</h2>
+    <h2 id="ledgers">The ledgers follow the structure of your organisation.</h2>
     <ol class="ledger named">
       <li><span class="id">Personal</span><span class="claim">One store per person; every claim is signed here first.</span><span class="signer">signer: owner</span><span class="basis">live</span></li>
       <li><span class="id">Team</span><span class="claim">One account, several users, each with their own store; a team signer re-checks the evidence before a claim stands for the team.</span><span class="signer">signer: team signer</span><span class="basis">set up on request</span></li>
@@ -200,12 +74,12 @@
     <p>The AI proposes a claim. A person signs it. T-knowledge decides what it is: a fact (T) if it rests on evidence a stranger could open, a guess (A) if it rests on your word alone.</p>
     <div class="outcomes">
       <div role="tablist" aria-label="Two outcomes">
-        <button role="tab" id="tab-t" aria-controls="outcome-t" aria-selected="true">What lands as T</button>
-        <button role="tab" id="tab-a" aria-controls="outcome-a" aria-selected="false" tabindex="-1">What stays A</button>
+        <button role="tab" id="tab-t" aria-controls="outcome-t" aria-selected="true">T claim</button>
+        <button role="tab" id="tab-a" aria-controls="outcome-a" aria-selected="false" tabindex="-1">A claim</button>
       </div>
       <div role="tabpanel" id="outcome-t" aria-labelledby="tab-t">
         <ol class="ledger compact">
-          <li><span class="id"><span class="stamp t">T</span></span><span class="claim">Bao Trinh founded T-knowledge, https://tknowledge.org.</span><span class="signer">signed Bao Trinh<br>2026-10-13</span><span class="basis">rests on D-88</span></li>
+          <li><span class="id"><span class="stamp t">T</span></span><span class="claim">Bao Trinh founded T-knowledge, https://tknowledge.org.</span><span class="signer">signed Bao Trinh<br>2026-10-13</span><span class="basis">rests on the page footer</span></li>
         </ol>
         <ol>
           <li>The AI proposes the claim and opens https://tknowledge.org.</li>
@@ -228,28 +102,13 @@
         </ol>
       </div>
     </div>
-    <p class="close">A T is signed because it was checked. An A is signed so everyone knows whose guess it is.</p>
-    <p class="note">Both are live entries in the maintainer's own store: the T is T-184, the A is A-43.</p>
-  </div>
-</section>
-
-<!-- 5. What it does -->
-<section class="block" id="how" aria-labelledby="does">
-  <div class="in">
-    <h2 id="does">What it does.</h2>
-    <ul class="list">
-      <li>The AI drafts the claim; it is signed with your name, because an AI cannot sign anything.</li>
-      <li>Ask the AI to record a guess as a fact and it refuses, saying why and what to do instead.</li>
-      <li>Drop a principle or withdraw evidence, and every claim built on it is flagged for review.</li>
-      <li>Every summary names who wrote it and cites what it rests on.</li>
-    </ul>
   </div>
 </section>
 
 <!-- 6. Agent builders and integrators -->
-<section class="block alt" aria-labelledby="builders">
+<section class="block" aria-labelledby="builders">
   <div class="in">
-    <h2 id="builders">Any agent that speaks MCP meets the same gate.</h2>
+    <h2 id="builders">AI agents that speak MCP meet the same gate.</h2>
     <p class="note">For agent builders and integrators.</p>
     <ul class="list">
       <li>The rules live in the store, not in the prompt. Whatever agent writes, it meets the same refusals.</li>
@@ -261,7 +120,7 @@
 </section>
 
 <!-- 7. Pricing -->
-<section class="block" id="pricing" aria-labelledby="pricing-h">
+<section class="block alt" id="pricing" aria-labelledby="pricing-h">
   <div class="in">
     <h2 id="pricing-h">Readers are free. You pay for writes and for ledgers.</h2>
     <p class="lead">Start free. Upgrade when you write more.</p>
@@ -282,7 +141,7 @@
           <ul><li>100 writes a month</li><li>Unlimited reads</li><li>MCP endpoint</li></ul>
           <a class="btn" href="#try">Add to Claude</a>
         </div>
-        <div class="plan">
+        <div class="plan main">
           <h3>Standard</h3>
           <p class="price">$9 / mo<small>$99 / yr</small></p>
           <p class="what">For one person who writes every day</p>
@@ -323,7 +182,7 @@
           <ul><li>Everything in Seat, standard</li><li>Unlimited writes</li></ul>
           <a class="btn ghost" href="mailto:quocbao.tn@icloud.com?subject=T-knowledge%20team">Set up a team</a>
         </div>
-        <div class="plan">
+        <div class="plan main">
           <h3>Team ledger</h3>
           <p class="price">$99 / ledger / mo<small>$999 / yr</small></p>
           <p class="what">The ledger itself</p>
@@ -337,7 +196,7 @@
     <div role="tabpanel" id="pricing-organisation" aria-labelledby="tab-organisation" hidden>
       <p class="above">When the organisation chart shows up.</p>
       <div class="plans" style="--n:2">
-        <div class="plan">
+        <div class="plan main">
           <h3>Proof of concept</h3>
           <p class="price">from $30,000</p>
           <p class="what">90 days inside your network, before any licence</p>
@@ -360,12 +219,11 @@
 </main>
 
 <!-- 8. Company -->
-<footer class="block alt">
+<footer class="block">
   <div class="in">
     <p>T-knowledge is operated by Ankayma FZC, Ajman Free Zone, United Arab Emirates.</p>
     <p>It is being set up as a company of its own.</p>
     <p>Founder: Bao Trinh — <a href="https://baotrinh.com">baotrinh.com</a></p>
-    <p><a href="mailto:quocbao.tn@icloud.com">quocbao.tn@icloud.com</a> · <a href="/privacy/">Privacy</a> · <a href="/docs/">Docs</a></p>
   </div>
 </footer>
 

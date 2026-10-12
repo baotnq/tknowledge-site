@@ -1,0 +1,150 @@
+/* The light sibling of ankayma.com: same blue, same 950px column; serif, ruled rows, two stamps. No dark variant. */
+  :root {
+    --paper:     #F4F6FB;  /* ankayma's text colour, as the ground */
+    --paper-2:   #EBEFF7;
+    --paper-row: #E4E9F3;
+    --ink:       #12141B;
+    --ink-soft:  #4A5162;
+    --rule:      #A9B6D3;
+    --stamp-t:   #3C63D6;  /* ankayma's #4f7dff, darkened for a light ground */
+    --stamp-a:   #A34B07;  /* ankayma's warn #f59e0b, darkened */
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--serif); font-size: 18px; line-height: 1.6;
+    font-optical-sizing: auto; -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--stamp-t); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--stamp-t); outline-offset: 2px; }
+  p { margin: 0 0 1rem; }
+  .note, .small { font-size: 15px; color: var(--ink-soft); }
+
+  /* blocks: full-bleed, alternating paper; the background is the divider */
+  .block { padding: 80px 0; }
+  .block.alt { background: var(--paper-2); }
+  .in { max-width: 950px; margin: 0 auto; padding: 0 24px; }
+  p, .list, .steps, .say, .copyrow { max-width: 860px; }
+  @media (max-width: 640px) { .block { padding: 56px 0; } }
+
+  /* nav */
+  nav { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px 24px; margin: -48px 0 56px; }
+  nav .brand { font-weight: 600; font-size: 22.5px; color: var(--stamp-t); text-decoration: none; }
+  nav .links { display: flex; gap: 8px 24px; flex-wrap: wrap; }
+  nav .links a { color: var(--ink); text-decoration: none; }
+  nav .links a:hover { text-decoration: underline; }
+  @media (max-width: 640px) { nav { margin: -32px 0 40px; } }
+
+  h1 { font-size: 55px; line-height: 1.1; font-weight: 600; color: var(--stamp-t); margin: 0 0 16px; letter-spacing: -.01em; }
+  h2 { font-size: 35px; line-height: 1.2; font-weight: 600; margin: 0 0 24px; }
+  @media (max-width: 640px) { h1 { font-size: 44px; } h2 { font-size: 28px; } }
+  .sub { font-size: 22.5px; line-height: 1.45; }
+  .lede { font-size: 22.5px; line-height: 1.4; margin: 0 0 32px; }
+  .three { margin: 0 0 24px; }
+  .three div { display: grid; grid-template-columns: 7.5rem 1fr; gap: 0 12px; padding: 8px 0; }
+  .three dt { font-weight: 600; color: var(--stamp-t); }
+  .three dd { margin: 0; }
+  .tk { color: var(--stamp-t); font-weight: 600; }
+  @media (max-width: 640px) { .lede { font-size: 22.5px; } .three div { grid-template-columns: 6.5rem 1fr; } }
+
+  /* buttons — square; the stamp is the only rounded thing on the page */
+  .btn, button {
+    display: inline-block; font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; text-align: center;
+    background: var(--stamp-t); color: var(--paper); border: 1.5px solid var(--stamp-t); border-radius: 0; padding: 12px 20px;
+  }
+  .btn.ghost, button.copy { background: transparent; color: var(--ink); border-color: var(--ink); }
+  button.copy { font-size: 15px; padding: 4px 12px; flex: none; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 32px 0 0; }
+
+  .say, .copyrow {
+    display: flex; gap: 12px; align-items: flex-start; justify-content: space-between;
+    background: var(--paper-row); padding: 8px 12px; margin: 8px 0;
+  }
+  .say span { font-style: italic; }
+  .copyrow code { font-family: var(--serif); font-size: 18px; overflow-wrap: anywhere; }
+
+  /* the ledger row */
+  .ledger { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+  .ledger > li {
+    display: grid; grid-template-columns: 72px 1fr 180px 120px; grid-template-areas: "id claim signer basis";
+    gap: 4px 16px; padding: 14px 8px; border-bottom: 1px solid var(--rule); align-items: baseline;
+  }
+  .ledger > li:nth-child(even) { background: var(--paper-row); }
+  .ledger .id { grid-area: id; }
+  .ledger .claim { grid-area: claim; overflow-wrap: anywhere; }
+  .ledger .signer { grid-area: signer; font-size: 15px; color: var(--ink-soft); }
+  .ledger .basis { grid-area: basis; font-size: 15px; color: var(--ink-soft); }
+  .ledger.named > li { grid-template-columns: 8rem 1fr 160px 130px; }
+  .ledger.named .id { font-weight: 600; }
+  @media (max-width: 640px) {
+    .ledger > li { grid-template-columns: 72px 1fr 1fr; grid-template-areas: "id claim claim" ". signer basis"; }
+    .ledger.named > li { grid-template-columns: 1fr 1fr; grid-template-areas: "id id" "claim claim" "signer basis"; }
+  }
+  /* two rows side by side: the two-line layout at every width */
+  .ledger.compact > li { grid-template-columns: 72px 1fr 1fr; grid-template-areas: "id claim claim" ". signer basis"; }
+
+  .stamp {
+    display: inline-block; border: 1.5px solid currentColor; border-radius: 3px; padding: 2px 8px;
+    font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.3; transform: rotate(-2deg);
+  }
+  .stamp.t { color: var(--stamp-t); }
+  .stamp.a { color: var(--stamp-a); }
+
+  .list { margin: 0; padding-left: 1.2em; }
+  .list li { margin-bottom: 12px; }
+
+  /* five steps */
+  .steps { margin: 0; padding-left: 1.4em; }
+  .steps > li { margin-bottom: 24px; padding-left: 4px; }
+  .steps > li::marker { font-weight: 600; }
+  .steps p { margin: 0 0 8px; }
+
+  /* same claim, two outcomes */
+  .outcomes ol:not(.ledger) { margin: 16px 0 0; padding-left: 1.4em; }
+  .outcomes ol:not(.ledger) li { margin-bottom: 8px; }
+  .outcomes [role="tablist"] { margin-top: 24px; }
+  .close { font-size: 22.5px; line-height: 1.5; margin-top: 32px; }
+
+  /* pricing: tabs, then plan columns of one frame */
+  .lead { font-size: 22.5px; font-style: italic; margin-top: -12px; }
+  [role="tablist"] { display: flex; flex-wrap: wrap; gap: 8px 32px; margin: 32px 0 24px; }
+  [role="tab"] { background: none; border: 0; border-bottom: 2px solid transparent; color: var(--ink-soft); padding: 4px 0; font-size: 22.5px; }
+  [role="tab"][aria-selected="true"] { color: var(--ink); border-bottom-color: var(--stamp-t); }
+  .above { margin-bottom: 24px; }
+  .plans { display: grid; gap: 16px; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); }
+  @media (max-width: 860px) { .plans { grid-template-columns: 1fr; } }
+  .plan.main { border: 2px solid var(--stamp-t); }
+  .plan { border: 1px solid var(--rule); padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+  .plan h3 { font-size: 22.5px; margin: 0; }
+  .plan .price { font-size: 28px; font-weight: 600; line-height: 1.2; margin: 0; }
+  .plan .price small { display: block; font-size: 15px; font-weight: 400; color: var(--ink-soft); margin-top: 4px; }
+  .plan .what { margin: 0; font-style: italic; }
+  #pricing-team .price { font-size: 22.5px; }
+  #pricing-organisation .plans { max-width: 720px; }
+  .plan ul { margin: 0; padding-left: 1.1em; font-size: 15px; flex: 1; }
+  .plan ul li { margin-bottom: 6px; }
+  .plan .btn { align-self: stretch; }
+  .plan .none { color: var(--ink-soft); padding: 12px 0; }
+  .example { margin-top: 24px; }
+
+  footer p { margin: 0 0 8px; }
+
+  /* docs and privacy */
+  nav .links a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--stamp-t); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+  .page h1 { margin-bottom: 16px; }
+  .page h2 { font-size: 28px; margin: 48px 0 12px; }
+  .page h2:first-child { margin-top: 0; }
+  .page h3 { font-size: 22.5px; margin: 24px 0 8px; }
+  .page ul, .page ol { padding-left: 1.2em; max-width: 860px; }
+  .page li { margin-bottom: 8px; }
+  .page code { font-family: var(--serif); font-weight: 600; font-size: 1em; overflow-wrap: anywhere; }
+  .page pre { font-family: var(--serif); font-variant-ligatures: none; background: var(--paper-row); padding: 12px 16px; margin: 8px 0 16px; overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; max-width: 860px; }
+  .scroll { overflow-x: auto; }
+  .page table { border-collapse: collapse; width: 100%; border-top: 1px solid var(--rule); }
+  .page th, .page td { text-align: left; vertical-align: top; padding: 10px 16px 10px 8px; border-bottom: 1px solid var(--rule); }
+  .page th { font-size: 15px; color: var(--ink-soft); font-weight: 600; }
+  .page tbody tr:nth-child(even) { background: var(--paper-row); }
+  .page td:first-child { font-weight: 600; width: 34%; }
