@@ -42,7 +42,7 @@
   h2 { font-size: 35px; line-height: 1.2; font-weight: 600; margin: 0 0 24px; }
   @media (max-width: 640px) { h1 { font-size: 44px; } h2 { font-size: 28px; } }
   .sub { font-size: 22.5px; line-height: 1.45; }
-  .lede { font-size: 22.5px; line-height: 1.4; margin: 0 0 32px; }
+  .lede { font-size: 22.5px; line-height: 1.4; margin: 0 0 32px; color: var(--stamp-t); }
   .three { margin: 0 0 24px; }
   .three div { display: grid; grid-template-columns: 7.5rem 1fr; gap: 0 12px; padding: 8px 0; }
   .three dt { font-weight: 600; color: var(--stamp-t); }
