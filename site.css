@@ -58,6 +58,7 @@
   .btn.ghost, button.copy { background: transparent; color: var(--ink); border-color: var(--ink); }
   button.copy { font-size: 15px; padding: 4px 12px; flex: none; }
   .actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 32px 0 0; }
+  header .actions { justify-content: center; margin-top: 40px; }
 
   .say, .copyrow {
     display: flex; gap: 12px; align-items: flex-start; justify-content: space-between;
