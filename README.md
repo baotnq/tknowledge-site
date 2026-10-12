@@ -6,7 +6,6 @@ Website giới thiệu và hướng dẫn T-knowledge, chạy trên GitHub Pages
 - `index.html` — trang chủ
 - `docs/index.html` — /docs (nối Claude, các loại entry, tool, mã từ chối)
 - `privacy/index.html` — /privacy
-- `qr-tknowledge.png`, `qr-tknowledge.svg` — QR tới https://tknowledge.org
 - `CNAME` — domain của GitHub Pages
 
 Link connector cho Claude: **https://mcp.tknowledge.org/mcp** (server tk, repo `t-knowledge-system`).
