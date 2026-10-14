@@ -4,20 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>T-knowledge</title>
-<meta name="description" content="T-knowledge — truth · trust · traceable knowledge. The AI proposes, a person signs. Add it to Claude and try it in five minutes.">
+<meta name="description" content="T-knowledge — truth · trust · traceable knowledge. The AI proposes, a person signs. For people who pay for Claude, and for organisations running AI agents.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400&display=swap">
 <link rel="stylesheet" href="/site.css">
 </head>
 <body>
-
 <!-- 1. Hero -->
 <header class="block">
   <div class="in">
     <nav aria-label="Main">
       <a class="brand" href="/">T-knowledge</a>
-      <span class="links"><a href="#try">Try it</a><a href="/docs/">Docs</a><a href="#pricing">Pricing</a><a href="/privacy/">Privacy</a></span>
+      <span class="links"><a href="/personal/">Personal</a><a href="/organizations/">Organisations</a><a href="/catalog/">Catalog</a><a href="/blog/">Blog</a><a href="/docs/">Docs</a></span>
     </nav>
     <h1>Knowledge Sovereignty</h1>
     <p class="lede">The organisation decides what is knowledge. The AI proposes; a person signs.</p>
@@ -28,46 +27,18 @@
       <div><dt>Traceable.</dt><dd>A living system in which claims are promoted and demoted.</dd></div>
     </dl>
     <p><span class="tk">T</span>(truth-trust-traceable)<span class="tk">-knowledge</span> holds the organisation's information and knowledge; the data stays where it is. The store keeps what was read from a source, and where the original is. A claim nobody can check yet is an [A]. With all three it is a [T], and the gate decides that at the moment of writing, not in a review weeks later.</p>
+    <div class="doors">
+      <a class="door" href="/personal/"><strong>I pay for Claude and keep losing what I knew.</strong><span>For one person: what goes wrong between chats, and a store that keeps it.</span></a>
+      <a class="door" href="/organizations/"><strong>My organisation runs AI agents.</strong><span>Which risk disappears, what it costs to run, what you hand the auditor.</span></a>
+    </div>
     <div class="actions">
-      <a class="btn" href="#try">Start free — 5 minutes</a>
+      <a class="btn" href="/personal/#try">Start free — 5 minutes</a>
     </div>
   </div>
 </header>
 
 <main>
-<!-- 2. Three ledgers -->
-<section class="block alt" aria-labelledby="ledgers">
-  <div class="in">
-    <h2 id="ledgers">The ledgers follow the structure of your organisation.</h2>
-    <ol class="ledger named">
-      <li><span class="id">Personal</span><span class="claim">One store per person; every claim is signed here first.</span><span class="signer">signer: owner</span><span class="basis">live</span></li>
-      <li><span class="id">Team</span><span class="claim">One account, several users, each with their own store; a team signer re-checks the evidence before a claim stands for the team.</span><span class="signer">signer: team signer</span><span class="basis">set up on request</span></li>
-      <li><span class="id">Organisation</span><span class="claim">An organisation ledger above the team ledgers; one organisation signer; self-hosting and a continuous checker to follow.</span><span class="signer">signer: organisation signer</span><span class="basis">set up on request</span></li>
-    </ol>
-    <p style="margin-top:32px">Nothing new to set up. Knowledge is created by a person, amplified by a team and settled by the organisation; the ledgers sit on those three levels and nowhere else.</p>
-  </div>
-</section>
-
-<!-- 3. Try it -->
-<section class="block" id="try" aria-labelledby="try-h">
-  <div class="in">
-    <h2 id="try-h">Try it in five minutes.</h2>
-    <ol class="steps">
-      <li><p>In Claude, open Settings, then Connectors, then Add custom connector, and paste this link.</p>
-        <div class="copyrow"><code id="u1">https://mcp.tknowledge.org/mcp</code><button class="copy" type="button" data-copy="u1">Copy</button></div></li>
-      <li><p>When Claude shows Connect, enter your email and paste the six-digit code sent from no-reply@tknowledge.org (check spam).</p></li>
-      <li><p>Ask Claude to explain, from T-knowledge's own instructions, what it records as a fact, keeps as a guess or refuses.</p>
-        <div class="say"><span>“Read T-knowledge's instructions and tell me, in plain words, what it will record as a fact, what it keeps as a guess, and what it will refuse.”</span><button class="copy" type="button">Copy</button></div></li>
-      <li><p>Give it a guess, then ask for it as a fact — it refuses and says why.</p>
-        <div class="say"><span>“Note that I think Acme will renew before 2026-12-31 — not confirmed.”</span><button class="copy" type="button">Copy</button></div>
-        <div class="say"><span>“Actually, record it as a fact.”</span><button class="copy" type="button">Copy</button></div></li>
-      <li><p>Ask what it would take, and it names the document it needs and where in it the claim must be read.</p>
-        <div class="say"><span>“What would I need to give you for that to be a fact?”</span><button class="copy" type="button">Copy</button></div></li>
-    </ol>
-  </div>
-</section>
-
-<!-- 4. Same claim, two outcomes -->
+<!-- 2. Same claim, two outcomes -->
 <section class="block alt" aria-labelledby="two">
   <div class="in">
     <h2 id="two">Same claim, two outcomes.</h2>
@@ -105,125 +76,14 @@
   </div>
 </section>
 
-<!-- 6. Agent builders and integrators -->
-<section class="block" aria-labelledby="builders">
-  <div class="in">
-    <h2 id="builders">AI agents that speak MCP meet the same gate.</h2>
-    <p class="note">For agent builders and integrators.</p>
-    <ul class="list">
-      <li>The rules live in the store, not in the prompt. Whatever agent writes, it meets the same refusals.</li>
-      <li>One endpoint: https://mcp.tknowledge.org/mcp. Register it as a vendor MCP endpoint in your builder.</li>
-      <li>Runs inside the customer's network: self-hosted image to follow.</li>
-    </ul>
-    <div class="actions"><a class="btn ghost" href="mailto:hello@ankayma.com?subject=T-knowledge%20integration">Talk about integration</a></div>
-  </div>
-</section>
-
-<!-- 7. Pricing -->
-<section class="block alt" id="pricing" aria-labelledby="pricing-h">
-  <div class="in">
-    <h2 id="pricing-h">Readers are free. You pay for writes and for ledgers.</h2>
-    <p class="lead">Start free. Upgrade when you write more.</p>
-    <p>Every person has a personal store and reads without limit. Writes are counted per month. A team or organisation ledger is paid per ledger; its owner and auditors cost nothing extra.</p>
-
-    <div role="tablist" aria-label="Plans">
-      <button role="tab" id="tab-personal" aria-controls="pricing-personal" aria-selected="true">Personal</button>
-      <button role="tab" id="tab-team" aria-controls="pricing-team" aria-selected="false" tabindex="-1">Team</button>
-      <button role="tab" id="tab-organisation" aria-controls="pricing-organisation" aria-selected="false" tabindex="-1">Organisation</button>
-    </div>
-
-    <div role="tabpanel" id="pricing-personal" aria-labelledby="tab-personal">
-      <div class="plans" style="--n:3">
-        <div class="plan">
-          <h3>Free</h3>
-          <p class="price">$0<small>free forever</small></p>
-          <p class="what">One store, your name on every claim</p>
-          <ul><li>100 writes a month</li><li>Unlimited reads</li><li>MCP endpoint</li></ul>
-          <a class="btn" href="#try">Start free — 5 minutes</a>
-        </div>
-        <div class="plan main">
-          <h3>Standard</h3>
-          <p class="price">$9 / mo<small>$99 / yr</small></p>
-          <p class="what">For one person who writes every day</p>
-          <ul><li>Everything in Free</li><li>1,000 writes a month</li></ul>
-          <a class="btn ghost" href="mailto:hello@ankayma.com?subject=T-knowledge%20Standard">Upgrade by email</a>
-        </div>
-        <div class="plan">
-          <h3>Unlimited</h3>
-          <p class="price">$19 / mo<small>$199 / yr</small></p>
-          <p class="what">For one person who writes without counting</p>
-          <ul><li>Everything in Standard</li><li>Unlimited writes</li></ul>
-          <a class="btn ghost" href="mailto:hello@ankayma.com?subject=T-knowledge%20Unlimited">Upgrade by email</a>
-        </div>
-      </div>
-    </div>
-
-    <div role="tabpanel" id="pricing-team" aria-labelledby="tab-team" hidden>
-      <p class="above">One account, several users, each with their own store. Set up on request.</p>
-      <div class="plans" style="--n:4">
-        <div class="plan">
-          <h3>Member</h3>
-          <p class="price">$0</p>
-          <p class="what">Reads everything, writes a little</p>
-          <ul><li>Personal store</li><li>100 writes a month</li><li>Cannot propose to the team ledger</li></ul>
-          <span class="none">—</span>
-        </div>
-        <div class="plan">
-          <h3>Seat, standard</h3>
-          <p class="price">$19 / seat / mo<small>$199 / yr</small></p>
-          <p class="what">Writes, and proposes to the team ledger</p>
-          <ul><li>Everything in Member</li><li>1,000 writes a month</li><li>Can propose to the team ledger</li></ul>
-          <a class="btn ghost" href="mailto:hello@ankayma.com?subject=T-knowledge%20team">Set up a team</a>
-        </div>
-        <div class="plan">
-          <h3>Seat, unlimited</h3>
-          <p class="price">$39 / seat / mo<small>$399 / yr</small></p>
-          <p class="what">Writes without counting</p>
-          <ul><li>Everything in Seat, standard</li><li>Unlimited writes</li></ul>
-          <a class="btn ghost" href="mailto:hello@ankayma.com?subject=T-knowledge%20team">Set up a team</a>
-        </div>
-        <div class="plan main">
-          <h3>Team ledger</h3>
-          <p class="price">$99 / ledger / mo<small>$999 / yr</small></p>
-          <p class="what">The ledger itself</p>
-          <ul><li>Team signer role</li><li>Auditors included</li><li>Evidence table</li><li>Re-check before a claim stands for the team</li></ul>
-          <a class="btn" href="mailto:hello@ankayma.com?subject=T-knowledge%20team">Set up a team</a>
-        </div>
-      </div>
-      <p class="example note">A team of 10 with one ledger: 4 standard seats, 2 unlimited seats, 4 members — $253 a month.</p>
-    </div>
-
-    <div role="tabpanel" id="pricing-organisation" aria-labelledby="tab-organisation" hidden>
-      <p class="above">When the organisation chart shows up.</p>
-      <div class="plans" style="--n:2">
-        <div class="plan main">
-          <h3>Proof of concept</h3>
-          <p class="price">from $30,000</p>
-          <p class="what">90 days inside your network, before any licence</p>
-          <ul><li>Scope agreed in writing</li><li>One organisation signer</li><li>Team ledgers included for the pilot</li></ul>
-          <a class="btn" href="mailto:hello@ankayma.com?subject=T-knowledge%20proof%20of%20concept">Start with a proof of concept</a>
-        </div>
-        <div class="plan">
-          <h3>Organisation ledger</h3>
-          <p class="price">Talk to us</p>
-          <p class="what">Annual licence, by contract</p>
-          <ul><li>Organisation signer</li><li>SSO</li><li>Deployment support</li><li>Self-hosting when available</li></ul>
-          <a class="btn ghost" href="mailto:hello@ankayma.com?subject=T-knowledge%20organisation">Talk to us</a>
-        </div>
-      </div>
-    </div>
-
-    <p class="note" style="margin-top:32px"><i>Introductory prices. Team and organisation accounts are set up on request. Cancel anytime on Personal.</i></p>
-  </div>
-</section>
 </main>
 
-<!-- 8. Company -->
 <footer class="block">
   <div class="in">
     <p>T-knowledge is operated by Ankayma FZC, Ajman Free Zone, United Arab Emirates.</p>
     <p>It is being set up as a company of its own.</p>
     <p>Founder: Bao Trinh — <a href="https://baotrinh.com">baotrinh.com</a></p>
+    <p class="links small"><a href="/privacy/">Privacy</a><a href="/standard/">Standard</a><a href="mailto:hello@ankayma.com">hello@ankayma.com</a></p>
   </div>
 </footer>
 

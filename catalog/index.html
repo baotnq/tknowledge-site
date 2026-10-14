@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catalog — T-knowledge</title>
+<meta name="description" content="The T-knowledge instruction catalog: practices for AI agents working in a T-knowledge store, each with the dated incident that produced it. Read them, filter them, take the ones you choose into your own store.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400&display=swap">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<header class="block page">
+  <div class="in">
+    <nav aria-label="Main">
+      <a class="brand" href="/">T-knowledge</a>
+      <span class="links"><a href="/personal/">Personal</a><a href="/organizations/">Organisations</a><a href="/catalog/" aria-current="page">Catalog</a><a href="/blog/">Blog</a><a href="/docs/">Docs</a></span>
+    </nav>
+    <h1>Catalog</h1>
+    <p class="lede">Instructions for AI agents, each one learned from something that went wrong.</p>
+    <p>An entry is published only when it ran active in a real store, carries the dated incident that produced it, has the consent of the person who signs that store, and holds nothing specific to one company. The store is named; the person is not.</p>
+    <p>Nothing here writes to your store. To take an entry, paste its “Add to your store” text into Claude; Claude shows it to you in your language, and adds it only if you approve — the English word for word, your translation beside it.</p>
+  </div>
+</header>
+
+<main class="block alt page">
+  <div class="in">
+    <div class="filters" id="filters" hidden>
+      <label>Who <select data-axis="who"><option value="">any</option></select></label>
+      <label>What <select data-axis="what"><option value="">any</option></select></label>
+      <label>When <select data-axis="when"><option value="">any</option></select></label>
+      <label>Where <select data-axis="where"><option value="">any</option></select></label>
+      <label>Words <input type="search" id="q" placeholder="draft, source, term…"></label>
+      <label><input type="checkbox" id="old"> superseded and withdrawn</label>
+    </div>
+    <p class="small" id="count" aria-live="polite">Loading the catalog…</p>
+    <ol class="entries" id="entries"></ol>
+    <noscript><p>The catalog is read from <a href="https://mcp.tknowledge.org/v1/catalog">https://mcp.tknowledge.org/v1/catalog</a> (JSON).</p></noscript>
+    <p class="small" style="margin-top:32px">The same list as JSON, for an agent or a script: <a href="https://mcp.tknowledge.org/v1/catalog">/v1/catalog</a> — <code>?situation=</code> narrows it to a situation, <code>?status=all</code> adds superseded and withdrawn entries. Inside a store, the <code>instructions</code> tool offers the entries a store has not met, and <code>help</code> suggests those that fit what you are about to do.</p>
+  </div>
+</main>
+
+<footer class="block">
+  <div class="in">
+    <p>T-knowledge is operated by Ankayma FZC, Ajman Free Zone, United Arab Emirates.</p>
+    <p>It is being set up as a company of its own.</p>
+    <p>Founder: Bao Trinh — <a href="https://baotrinh.com">baotrinh.com</a></p>
+    <p class="links small"><a href="/privacy/">Privacy</a><a href="/standard/">Standard</a><a href="mailto:hello@ankayma.com">hello@ankayma.com</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var API = 'https://mcp.tknowledge.org/v1/catalog?status=all';
+  var AXES = ['who', 'what', 'when', 'where'];
+  var list = document.getElementById('entries'), count = document.getElementById('count');
+  var entries = [];
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; });
+  }
+  function day(t) { return t ? String(t).slice(0, 10) : ''; }
+  function paste(e) {
+    return 'Read entry ' + e.id + ' of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. ' +
+      'If I approve, add it to my T-knowledge store with instruction_add, catalog ' + e.id + ': the English unchanged, and your translation beside it.';
+  }
+  function status(e) {
+    if (e.status === 'superseded') return 'superseded by ' + esc(e.superseded_by);
+    if (e.status === 'withdrawn') return 'withdrawn' + (e.reason ? ' — ' + esc(e.reason) : '');
+    return 'current';
+  }
+  function render(e) {
+    var t = e.tags || {}, chips = '';
+    AXES.forEach(function (a) { (t[a] || []).forEach(function (v) { chips += '<span class="tag">' + a + ': ' + esc(v) + '</span>'; }); });
+    var name = e.title || (e.term ? 'Definition: ' + e.term : '');
+    var rows = '';
+    if (e.evidence) rows += '<dt>Incident</dt><dd>' + (e.incident_on ? esc(e.incident_on) + ' — ' : '') + esc(e.evidence) + '</dd>';
+    if (e.source) rows += '<dt>Source</dt><dd>' + esc(e.source) + '</dd>';
+    var why = e.definition_why || t.why;
+    if (why) rows += '<dt>Why</dt><dd>' + esc(why) + '</dd>';
+    if (t.how) rows += '<dt>How</dt><dd>' + esc(t.how) + '</dd>';
+    var take = e.status === 'current'
+      ? '<details><summary>Add to your store</summary><div class="say"><span>' + esc(paste(e)) + '</span><button class="copy" type="button">Copy</button></div></details>'
+      : '';
+    return '<li class="entry' + (e.status === 'current' ? '' : ' old') + '" id="' + esc(e.id) + '">' +
+      '<header><span class="bp">' + esc(e.id) + '</span><span class="meta">' + esc(e.kind) + ' · ' + status(e) +
+      (e.approved_at ? ' · added ' + day(e.approved_at) : '') + '</span></header>' +
+      (name ? '<p><b>' + esc(name) + '</b></p>' : '') +
+      '<p class="text">' + esc(e.text).replace(/`([^`]+)`/g, '<code>$1</code>') + '</p>' + (rows ? '<dl>' + rows + '</dl>' : '') +
+      (chips ? '<p>' + chips + '</p>' : '') + take + '</li>';
+  }
+  function show() {
+    var want = {};
+    AXES.forEach(function (a) { want[a] = document.querySelector('select[data-axis="' + a + '"]').value; });
+    var q = document.getElementById('q').value.trim().toLowerCase();
+    var old = document.getElementById('old').checked;
+    var shown = entries.filter(function (e) {
+      if (!old && e.status !== 'current') return false;
+      for (var i = 0; i < AXES.length; i++) {
+        var a = AXES[i];
+        if (want[a] && (e.tags[a] || []).indexOf(want[a]) < 0) return false;
+      }
+      return !q || JSON.stringify([e.id, e.title, e.term, e.text, e.evidence, e.tags.why, e.tags.how]).toLowerCase().indexOf(q) >= 0;
+    });
+    list.innerHTML = shown.map(render).join('');
+    var current = entries.filter(function (e) { return e.status === 'current'; }).length;
+    count.textContent = shown.length + ' shown · ' + current + ' current entries in the catalog';
+  }
+  function copyText(text, btn) {
+    function done() { var t = btn.textContent; btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = t; }, 1500); }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(done, function () {}); return; }
+    var ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); done(); } catch (e) {} document.body.removeChild(ta);
+  }
+  list.addEventListener('click', function (ev) {
+    var b = ev.target.closest('button.copy');
+    if (b) copyText(b.parentNode.querySelector('span').textContent, b);
+  });
+
+  fetch(API).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) {
+    entries = (d.entries || []).map(function (e) { e.tags = e.tags || {}; return e; });
+    AXES.forEach(function (a) {
+      var seen = {};
+      entries.forEach(function (e) { (e.tags[a] || []).forEach(function (v) { seen[v] = 1; }); });
+      var sel = document.querySelector('select[data-axis="' + a + '"]');
+      Object.keys(seen).sort().forEach(function (v) { var o = document.createElement('option'); o.value = o.textContent = v; sel.appendChild(o); });
+    });
+    document.getElementById('filters').hidden = false;
+    Array.prototype.forEach.call(document.querySelectorAll('#filters select, #filters input'), function (el) {
+      el.addEventListener(el.type === 'search' ? 'input' : 'change', show);
+    });
+    show();
+    if (location.hash) { var el = document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView(); }
+  }).catch(function () {
+    count.innerHTML = 'The catalog could not be read just now. It is also at <a href="https://mcp.tknowledge.org/v1/catalog">/v1/catalog</a> (JSON).';
+  });
+})();
+</script>
+</body>
+</html>
