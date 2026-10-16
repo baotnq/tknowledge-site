@@ -1,6 +1,6 @@
 // Local stand-in for the edge: node edge/dev.mjs [port] [origin]
 // Runs worker.js in front of a static server (default http://127.0.0.1:8090,
-// e.g. `python3 -m http.server 8090`), so the curl tests in TESTS.md run before deploy.
+// e.g. `python3 -m http.server 8090`), so the curl checks in README.md run before deploy.
 import http from "node:http";
 import { handle } from "./worker.js";
 

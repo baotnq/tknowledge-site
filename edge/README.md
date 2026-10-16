@@ -32,6 +32,10 @@ and `/sitemap.md` are plain files on Pages (Pages already serves `.md` as
 1. Cloudflare dashboard → tknowledge.org → DNS: switch the four GitHub Pages A records
    (and AAAA, if any) from "DNS only" to "Proxied". SSL/TLS mode: Full (not Full strict: GitHub Pages may not renew its own certificate once the records are proxied).
 2. `npx wrangler login`, then from this folder `npx wrangler deploy`.
-3. Run the curl tests in TESTS.md against https://tknowledge.org.
+3. Check, with `E=https://tknowledge.org`:
+   - `curl -sI -H 'Accept: text/markdown' $E/` → `text/markdown`, `vary: Accept, User-Agent`
+   - `curl -sI -A 'ChatGPT-User' $E/` → `text/markdown`
+   - `curl -sI -A 'Googlebot' -H 'Accept: text/markdown' $E/` → `text/html`
+   - `curl -sI $E/` → `text/html`
 
 To undo: `npx wrangler delete` and set the records back to "DNS only".
