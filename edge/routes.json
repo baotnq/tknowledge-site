@@ -1,0 +1,11 @@
+{
+ "/": "/index.md",
+ "/docs/": "/docs.md",
+ "/personal/": "/personal.md",
+ "/organizations/": "/organizations.md",
+ "/catalog/": "/catalog.md",
+ "/blog/": "/blog.md",
+ "/blog/delete-the-chat-keep-the-knowledge/": "/blog/delete-the-chat-keep-the-knowledge.md",
+ "/blog/numbers/": "/blog/numbers.md",
+ "/privacy/": "/privacy.md"
+}

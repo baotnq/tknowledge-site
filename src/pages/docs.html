@@ -1,0 +1,93 @@
+<!--
+title: T-knowledge docs — how AI agents connect to the signed knowledge store at mcp.tknowledge.org
+description: How to connect Claude, Claude Code, ChatGPT, Gemini, Grok or a script to T-knowledge, and what the store holds, its tools, refusals and limits. Connect AI agents at https://mcp.tknowledge.org/mcp.
+path: /docs/
+md: /docs.md
+header: block page
+scripts: 
+-->
+<!-- hero -->
+<h1>Docs</h1>
+    <!-- include definition -->
+<!-- main -->
+<main class="block alt page">
+  <div class="in">
+
+    <nav class="toc" aria-label="On this page"><a href="#connect">Connect</a> · <a href="#docker">Run your own store</a> · <a href="#keys">Keys</a> · <a href="#organisations">Organisations</a> · <a href="#reference">Reference</a></nav>
+
+    <h2 id="connect">1. Connect AI agents to the hosted store</h2>
+    <!-- include connect -->
+    <p>Expected result: <code>instructions()</code> returns the meta lines M1–M3 and an index.</p>
+    <p>A refused call is an answer, not a failure: it carries a code and <code>next</code>, the move still open. The codes are under <a href="#refusals">Refusals</a>.</p>
+
+    <h2 id="docker">2. Run your own store — Docker (Personal)</h2>
+    <p>Self-hosting for individuals is being documented — write to <a href="mailto:hello@ankayma.com">hello@ankayma.com</a>.</p>
+
+    <h2 id="keys">3. Keys — free and paid</h2>
+    <p>Keys for free and paid use are being documented — write to <a href="mailto:hello@ankayma.com">hello@ankayma.com</a>.</p>
+
+    <h2 id="organisations">4. Organisations</h2>
+    <p>An organisation runs one instance of T-knowledge inside its own environment, with its own root key. The organisation's own people sign what its AI agents propose. To set one up, write to <a href="mailto:hello@ankayma.com">hello@ankayma.com</a>.</p>
+
+    <h2 id="reference">5. Reference</h2>
+    <h3 id="what-the-store-holds">What the store holds</h3>
+    <div class="scroll"><table>
+      <thead><tr><th>Kind</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr id="claim"><td>claim</td><td>A statement about the world that can be checked against a source. Every T and every A is one.</td></tr>
+        <tr id="principle"><td>P.n</td><td>A principle: an axiom, added and retired, never rewritten. A new store starts with seven.</td></tr>
+        <tr id="truth"><td>T-n</td><td>A claim that passed the gate — a fact backed by a document, or a conclusion from at least two standing entries. Its wording never changes.</td></tr>
+        <tr id="assumption"><td>A-n</td><td>An assumption, with what would settle it. Promoted to T when the evidence arrives, refuted when the opposite is observed.</td></tr>
+        <tr id="document"><td>D-n</td><td>A document: readable text plus a pointer to the original (which stays where you keep it), and how you looked at it. <i>Bound</i> when a URL and hash tie the text to an original, <i>unbound</i> when it is text alone — both are valid evidence.</td></tr>
+        <tr id="thread"><td>TH-n</td><td>A thread: one matter you follow, with keywords, linking the entries, people and conversations that belong to it.</td></tr>
+        <tr id="instruction"><td>I-n</td><td>An instruction: how an assistant should use this store — a meta line (M1), a directive (1, 2 …) or a definition (def:claim). Not a claim and not a principle; added or retired, never edited.</td></tr>
+        <tr id="summary"><td>S-n</td><td>A summary of a thread: always an A, with a named author; each sentence cites ids in the thread; marked stale when newer entries arrive.</td></tr>
+        <tr id="conversation"><td>conv_n</td><td>A conversation: a chat or message trail linked to a matter, kept as context — it informs, it is not cited as proof.</td></tr>
+        <tr id="flag"><td>F-n</td><td>A flag: something needs a person — evidence withdrawn, a source that changed between readings. The store raises it instead of resolving it quietly.</td></tr>
+        <tr id="attester"><td>attester</td><td>A person who stands behind a claim by adding their own document for it.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 id="tools">Tools</h3>
+    <p class="small">The assistant picks these on its own; you talk in plain language.</p>
+    <div class="scroll"><table>
+      <thead><tr><th>Tool</th><th>Use</th></tr></thead>
+      <tbody>
+        <tr><td>assume · update_assumption</td><td>Hold something not yet checked, and revise it while it is open.</td></tr>
+        <tr><td>document_add</td><td>Record evidence as text, with where the original is.</td></tr>
+        <tr><td>admit · promote</td><td>Put a checked claim into the ledger; raise an assumption once its evidence is in.</td></tr>
+        <tr><td>attest · withdraw_evidence</td><td>Add or withdraw a document behind a claim.</td></tr>
+        <tr><td>demote · retire · recheck · refute</td><td>Take down what no longer holds; record that a source was checked again; refute an assumption.</td></tr>
+        <tr><td>principles · principle_add · principle_retire</td><td>Read, add or retire principles; retiring one lists everything standing on it.</td></tr>
+        <tr><td>instructions · instruction_add · instruction_retire</td><td>How assistants use your store, kept in the store: one list for every project — meta lines about the list, numbered directives, and definitions of the store's concepts. Added or retired, never edited; wording already there is caught as for claims. <code>instructions</code> also lists entries of the <a href="/catalog/">catalog</a> your store has not met; you take one, in your language, or decline it.</td></tr>
+        <tr><td>help</td><td>Before acting, the instructions of your store that fit what you are about to do — “draft a LinkedIn message”, “record a decision” — and catalog entries that fit, offered, never followed.</td></tr>
+        <tr><td>store_info</td><td>Who maintains this deployment and where to send feedback when tk misbehaves.</td></tr>
+        <tr><td>thread_open · thread_tag · link · unlink · thread_close</td><td>Group entries into a matter you follow.</td></tr>
+        <tr><td>summarize</td><td>Write a reading of a thread — drafted by the assistant, approved by you, every sentence citing ids.</td></tr>
+        <tr><td>ledger · entry · chain · open_items · thread · lookup · documents · flags</td><td>Read: what is known, one entry, what it stands on, what is still open, a thread, search by keyword, documents, warnings.</td></tr>
+        <tr><td>check_claim · define</td><td>Ask whether a sentence is a claim yet, and what the store's words mean. These work before signing in.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 id="refusals">Refusals</h3>
+    <p>A refusal is an answer, not an error. It comes with a code, a sentence saying why, and <code>next</code> — the move still open — so the assistant can tell you what to write instead. Common ones:</p>
+    <ul>
+      <li><code>CLAIM_FAILED</code> — not a claim yet: two sentences in one, a relative date, a person not named.</li>
+      <li><code>NO_SOURCE</code> — a fact names no document, or not where in it the claim is read.</li>
+      <li><code>SINGLE_PREMISE</code> — a derivation needs at least two premises.</li>
+      <li><code>PREMISE_NOT_FOUND</code> — a premise id is not in the truth ledger (an assumption is not).</li>
+      <li><code>USE_PROMOTE</code> — that sentence is already an open assumption; promote it with evidence.</li>
+      <li><code>SOURCE_NOT_RETRIEVABLE</code>, <code>USE_DOCUMENT</code> — a fact needs a document someone else could open.</li>
+      <li><code>PREMISE_NOT_T</code> — a conclusion cannot stand on something that has fallen.</li>
+      <li><code>SUMMARY_UNCITED</code> — a sentence in a summary cites no entry of the thread.</li>
+      <li><code>CLAIM_TOO_MANY_WORDS</code>, <code>WRITE_LIMIT_REACHED</code> — a store's limits.</li>
+    </ul>
+    <p class="small">Every refusal carries its own reason and <code>next</code>. Ask the assistant to run <code>define</code> on a word of the store — claim, T, A, evidence, promote … — for the store's own explanation.</p>
+
+    <h3 id="limits">Limits</h3>
+    <p>Writes are counted per person per calendar month (Asia/Dubai time): Free 100, Standard 1,000, Unlimited without a count. Reads are unlimited; up to 100 words per claim. When the writes run out the store stays readable, and they start again next month. Plans: <a href="/personal/#pricing">Personal</a>, <a href="/organizations/#cost">teams and organisations</a>.</p>
+
+    <h3 id="support">Support</h3>
+    <p><a href="mailto:hello@ankayma.com">hello@ankayma.com</a></p>
+  </div>
+</main>

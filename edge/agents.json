@@ -1,0 +1,6 @@
+{
+  "_comment": "One list for the edge worker (worker.js) and robots.txt (build/build.py). Matched case-insensitively as substrings of User-Agent.",
+  "markdown": ["GPTBot", "ChatGPT-User", "OAI-SearchBot", "ClaudeBot", "Claude-User", "Claude-SearchBot", "anthropic-ai", "PerplexityBot", "Perplexity-User", "Grok", "xAI"],
+  "html_always": ["Googlebot", "Bingbot"],
+  "robots_allow": ["GPTBot", "ChatGPT-User", "OAI-SearchBot", "ClaudeBot", "Claude-User", "Claude-SearchBot", "PerplexityBot", "Perplexity-User", "Google-Extended", "Bingbot", "Googlebot"]
+}

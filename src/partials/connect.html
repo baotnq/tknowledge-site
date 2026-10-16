@@ -1,0 +1,36 @@
+<div class="connect">
+  <h3>Claude — web, Desktop, mobile</h3>
+  <ol>
+    <li>Settings → Connectors → Add custom connector.</li>
+    <li>URL: <code>https://mcp.tknowledge.org/mcp</code></li>
+    <li>Sign in with your email: a six-digit code arrives from <code>no-reply@tknowledge.org</code>.</li>
+  </ol>
+  <p class="status">Status: in use since October 2026.</p>
+
+  <h3>Claude Code</h3>
+  <pre>claude mcp add --transport http tk https://mcp.tknowledge.org/mcp</pre>
+  <p>Then <code>/mcp</code>, pick <code>tk</code>, and sign in.</p>
+  <p class="status">Status: in use.</p>
+
+  <h3>ChatGPT</h3>
+  <ol>
+    <li>Settings → Plugins → Add → “Add custom MCP server”.</li>
+    <li>Name: <code>T-knowledge</code>. Server URL: <code>https://mcp.tknowledge.org/mcp</code>. Authentication: OAuth.</li>
+    <li>Click “Continue to T-Knowledge”, then enter the six-digit code sent to your email.</li>
+  </ol>
+  <p class="status">Status: tested 2026-10-14 on a Free account.</p>
+
+  <h3>Gemini</h3>
+  <p>Add an MCP server with the URL <code>https://mcp.tknowledge.org/mcp</code> and authorise.</p>
+  <p class="status">Status: seen working in the UI on 2026-10-14, not independently verified.</p>
+
+  <h3>Grok</h3>
+  <p>grok.com/connectors → New Connector → Custom → URL <code>https://mcp.tknowledge.org/mcp</code>.</p>
+  <p class="status">Status: not yet tried.</p>
+
+  <h3>Cursor and scripts</h3>
+  <p>Connect to <code>https://mcp.tknowledge.org/mcp</code> with the header <code>Authorization: Bearer &lt;key&gt;</code>. For a key, write to <a href="mailto:hello@ankayma.com">hello@ankayma.com</a>.</p>
+  <p class="status">Status: not yet tried on Cursor.</p>
+
+  <p>Your first sign-in opens a store of your own. Free: 100 writes a month, reads unlimited.</p>
+</div>

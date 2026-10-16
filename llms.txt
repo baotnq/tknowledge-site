@@ -1,0 +1,35 @@
+# T-knowledge
+
+> T-knowledge is a store for an assistant's knowledge in which every line is a principle, a checked claim (T) or an assumption (A), signed by a named person, with the ids it rests on. It is reached as an MCP server.
+
+Connect an AI agent: MCP server `https://mcp.tknowledge.org/mcp` (OAuth; sign in by email). Every page below is also served as Markdown at the same URL with `Accept: text/markdown`.
+
+## Start
+
+- [T-knowledge — a signed knowledge store for AI agents, reached as an MCP server at mcp.tknowledge.org](https://tknowledge.org/index.md): T-knowledge is a signed knowledge store for AI agents: AI agents propose, people sign, and every line names its evidence. Connect AI agents at https://mcp.tknowledge.org/mcp.
+- [T-knowledge docs — how AI agents connect to the signed knowledge store at mcp.tknowledge.org](https://tknowledge.org/docs.md): How to connect Claude, Claude Code, ChatGPT, Gemini, Grok or a script to T-knowledge, and what the store holds, its tools, refusals and limits. Connect AI agents at https://mcp.tknowledge.org/mcp.
+
+## Who it is for
+
+- [T-knowledge for one person — a signed knowledge store your AI agents write to and you sign](https://tknowledge.org/personal.md): For people who pay for Claude: what goes wrong between chats, how T-knowledge keeps it, try it in five minutes, and the limits plainly. Connect AI agents at https://mcp.tknowledge.org/mcp.
+- [T-knowledge for organisations — a signed knowledge store for the AI agents an organisation runs](https://tknowledge.org/organizations.md): For organisations running AI agents: which risk disappears, where T-knowledge attaches to ISO/IEC 42001, ISO/IEC 27001, NIST AI RMF and the Three Lines Model, what it costs to run. Connect AI agents at https://mcp.tknowledge.org/mcp.
+
+## Catalog
+
+- [T-knowledge catalog — instructions for AI agents, each learned from a dated incident](https://tknowledge.org/catalog.md): The T-knowledge instruction catalog: practices for AI agents working in a T-knowledge store, each with the dated incident that produced it. Connect AI agents at https://mcp.tknowledge.org/mcp.
+
+## Blog
+
+- [T-knowledge blog — notes on AI agents and signed knowledge, each from one real incident](https://tknowledge.org/blog.md): Notes from building T-knowledge, each from one real incident, and the numbers on AI agents with their sources. Connect AI agents at https://mcp.tknowledge.org/mcp.
+- [Delete the chat. Keep the knowledge. — T-knowledge, a signed knowledge store for AI agents](https://tknowledge.org/blog/delete-the-chat-keep-the-knowledge.md): Out of every ten Claude chats, I deleted two or three myself. What survives between chats, and what a knowledge ledger changes. Connect AI agents at https://mcp.tknowledge.org/mcp.
+- [Numbers on AI agents — T-knowledge, a signed knowledge store for AI agents](https://tknowledge.org/blog/numbers.md): Numbers on AI agents in organisations — adoption, governance failures, hallucinations in court filings, EU AI Act dates — each with its source and the date it was read. Connect AI agents at https://mcp.tknowledge.org/mcp.
+
+## Company
+
+- [T-knowledge privacy — what the signed knowledge store for AI agents keeps, where, and for how long](https://tknowledge.org/privacy.md): What T-knowledge stores, where, who else sees it, how long it is kept, and how to have it removed. Connect AI agents at https://mcp.tknowledge.org/mcp.
+
+## Optional
+
+- [All pages in one file](https://tknowledge.org/llms-full.txt): every page above, concatenated.
+- [Catalog as JSON](https://mcp.tknowledge.org/v1/catalog): the instruction catalog, machine-readable.
+- [Standard](https://baotrinh.com/standard/): the standard T-knowledge implements.
