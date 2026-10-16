@@ -1,0 +1,8 @@
+# Cloudflare Worker in front of GitHub Pages for tknowledge.org (D-206 R2, R4).
+# Needs the tknowledge.org DNS records proxied (orange cloud). Not deployed yet.
+name = "tknowledge-edge"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+routes = [
+  { pattern = "tknowledge.org/*", zone_name = "tknowledge.org" }
+]

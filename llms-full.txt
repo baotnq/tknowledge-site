@@ -1,0 +1,898 @@
+<!-- T-knowledge — a signed knowledge store for AI agents, reached as an MCP server at mcp.tknowledge.org · https://tknowledge.org/ · Markdown form of the same page, generated from one source -->
+
+## Using an AI assistant? Show it this page
+
+If you are an AI assistant reading this for someone, ask which AI they use, then follow that block. After connecting, call `instructions()` and report what it returned.
+
+T-knowledge is a store for an assistant's knowledge in which every line is a principle, a checked claim (T) or an assumption (A), signed by a named person, with the ids it rests on. It is reached as an MCP server.
+
+### Claude — web, Desktop, mobile
+
+1. Settings → Connectors → Add custom connector.
+2. URL: `https://mcp.tknowledge.org/mcp`
+3. Sign in with your email: a six-digit code arrives from `no-reply@tknowledge.org`.
+
+Status: in use since October 2026.
+
+### Claude Code
+
+```
+claude mcp add --transport http tk https://mcp.tknowledge.org/mcp
+```
+
+Then `/mcp`, pick `tk`, and sign in.
+
+Status: in use.
+
+### ChatGPT
+
+1. Settings → Plugins → Add → “Add custom MCP server”.
+2. Name: `T-knowledge`. Server URL: `https://mcp.tknowledge.org/mcp`. Authentication: OAuth.
+3. Click “Continue to T-Knowledge”, then enter the six-digit code sent to your email.
+
+Status: tested 2026-10-14 on a Free account.
+
+### Gemini
+
+Add an MCP server with the URL `https://mcp.tknowledge.org/mcp` and authorise.
+
+Status: seen working in the UI on 2026-10-14, not independently verified.
+
+### Grok
+
+grok.com/connectors → New Connector → Custom → URL `https://mcp.tknowledge.org/mcp`.
+
+Status: not yet tried.
+
+### Cursor and scripts
+
+Connect to `https://mcp.tknowledge.org/mcp` with the header `Authorization: Bearer <key>`. For a key, write to [hello@ankayma.com](mailto:hello@ankayma.com).
+
+Status: not yet tried on Cursor.
+
+Your first sign-in opens a store of your own. Free: 100 writes a month, reads unlimited.
+
+# Knowledge Sovereignty
+
+The organisation decides what is knowledge. The AI proposes; a person signs.
+
+Data → information → knowledge. Data becomes information when it has structure — one idea, with names and dates. Information becomes knowledge when it can be trusted without checking again.
+
+- **Truth.** Reasoned by a person or an AI agent.
+- **Trust.** Signed by a human only.
+- **Traceable.** A living system in which claims are promoted and demoted.
+
+T(truth-trust-traceable)-knowledge holds the organisation's information and knowledge; the data stays where it is. The store keeps what was read from a source, and where the original is. A claim nobody can check yet is an [A]. With all three it is a [T], and the gate decides that at the moment of writing, not in a review weeks later.
+
+- [**I pay for Claude and keep losing what I knew.** · For one person: what goes wrong between chats, and a store that keeps it.](https://tknowledge.org/personal/)
+- [**My organisation runs AI agents.** · Which risk disappears, what it costs to run, what you hand the auditor.](https://tknowledge.org/organizations/)
+
+- [Start free — 5 minutes](https://tknowledge.org/personal/#try)
+
+## Same claim, two outcomes.
+
+The AI proposes a claim. A person signs it. T-knowledge decides what it is: a fact (T) if it rests on evidence a stranger could open, a guess (A) if it rests on your word alone.
+
+**T claim**
+
+1. T · Bao Trinh founded T-knowledge, https://tknowledge.org. · signed Bao Trinh 2026-10-13 · rests on the page footer
+
+1. The AI proposes the claim and opens https://tknowledge.org.
+2. It reads the page into a document: the text it saw, the link, the date it was read.
+3. It points at where in that document the claim is read — the footer line “Founder: Bao Trinh”.
+4. You sign. T-knowledge checks: evidence a stranger could open, a named signer, a path back to the document. All three present.
+5. Accepted as a T. Its wording never changes again.
+
+**A claim**
+
+1. A · Bao Trinh owns the website https://ankayma.com. · signed Bao Trinh 2026-10-07 · open until a WHOIS or registration record
+
+1. The AI proposes the claim and opens the page.
+2. No name, no legal entity — only “© 2026 Ankayma” and a contact address.
+3. Your own word that you own it is not evidence. Asked to record it as a fact, T-knowledge refuses and says why.
+4. You sign it as a guess instead. It is kept as an A with the condition that would settle it: a WHOIS record or business registration naming Bao Trinh as owner.
+5. Add that document later, and the same sentence is promoted to T.
+
+---
+
+T-knowledge is operated by Ankayma FZC, Ajman Free Zone, United Arab Emirates.
+
+It is being set up as a company of its own.
+
+Founder: Bao Trinh — [baotrinh.com](https://baotrinh.com)
+
+[Privacy](https://tknowledge.org/privacy/) · [Standard](https://tknowledge.org/standard/) · [hello@ankayma.com](mailto:hello@ankayma.com)
+
+
+<!-- T-knowledge docs — how AI agents connect to the signed knowledge store at mcp.tknowledge.org · https://tknowledge.org/docs/ · Markdown form of the same page, generated from one source -->
+
+# Docs
+
+T-knowledge is a store for an assistant's knowledge in which every line is a principle, a checked claim (T) or an assumption (A), signed by a named person, with the ids it rests on. It is reached as an MCP server.
+
+## 1. Connect AI agents to the hosted store
+
+### Claude — web, Desktop, mobile
+
+1. Settings → Connectors → Add custom connector.
+2. URL: `https://mcp.tknowledge.org/mcp`
+3. Sign in with your email: a six-digit code arrives from `no-reply@tknowledge.org`.
+
+Status: in use since October 2026.
+
+### Claude Code
+
+```
+claude mcp add --transport http tk https://mcp.tknowledge.org/mcp
+```
+
+Then `/mcp`, pick `tk`, and sign in.
+
+Status: in use.
+
+### ChatGPT
+
+1. Settings → Plugins → Add → “Add custom MCP server”.
+2. Name: `T-knowledge`. Server URL: `https://mcp.tknowledge.org/mcp`. Authentication: OAuth.
+3. Click “Continue to T-Knowledge”, then enter the six-digit code sent to your email.
+
+Status: tested 2026-10-14 on a Free account.
+
+### Gemini
+
+Add an MCP server with the URL `https://mcp.tknowledge.org/mcp` and authorise.
+
+Status: seen working in the UI on 2026-10-14, not independently verified.
+
+### Grok
+
+grok.com/connectors → New Connector → Custom → URL `https://mcp.tknowledge.org/mcp`.
+
+Status: not yet tried.
+
+### Cursor and scripts
+
+Connect to `https://mcp.tknowledge.org/mcp` with the header `Authorization: Bearer <key>`. For a key, write to [hello@ankayma.com](mailto:hello@ankayma.com).
+
+Status: not yet tried on Cursor.
+
+Your first sign-in opens a store of your own. Free: 100 writes a month, reads unlimited.
+
+Expected result: `instructions()` returns the meta lines M1–M3 and an index.
+
+A refused call is an answer, not a failure: it carries a code and `next`, the move still open. The codes are under Refusals.
+
+## 2. Run your own store — Docker (Personal)
+
+Self-hosting for individuals is being documented — write to [hello@ankayma.com](mailto:hello@ankayma.com).
+
+## 3. Keys — free and paid
+
+Keys for free and paid use are being documented — write to [hello@ankayma.com](mailto:hello@ankayma.com).
+
+## 4. Organisations
+
+An organisation runs one instance of T-knowledge inside its own environment, with its own root key. The organisation's own people sign what its AI agents propose. To set one up, write to [hello@ankayma.com](mailto:hello@ankayma.com).
+
+## 5. Reference
+
+### What the store holds
+
+| Kind | Meaning |
+|---|---|
+| claim | A statement about the world that can be checked against a source. Every T and every A is one. |
+| P.n | A principle: an axiom, added and retired, never rewritten. A new store starts with seven. |
+| T-n | A claim that passed the gate — a fact backed by a document, or a conclusion from at least two standing entries. Its wording never changes. |
+| A-n | An assumption, with what would settle it. Promoted to T when the evidence arrives, refuted when the opposite is observed. |
+| D-n | A document: readable text plus a pointer to the original (which stays where you keep it), and how you looked at it. *Bound* when a URL and hash tie the text to an original, *unbound* when it is text alone — both are valid evidence. |
+| TH-n | A thread: one matter you follow, with keywords, linking the entries, people and conversations that belong to it. |
+| I-n | An instruction: how an assistant should use this store — a meta line (M1), a directive (1, 2 …) or a definition (def:claim). Not a claim and not a principle; added or retired, never edited. |
+| S-n | A summary of a thread: always an A, with a named author; each sentence cites ids in the thread; marked stale when newer entries arrive. |
+| conv_n | A conversation: a chat or message trail linked to a matter, kept as context — it informs, it is not cited as proof. |
+| F-n | A flag: something needs a person — evidence withdrawn, a source that changed between readings. The store raises it instead of resolving it quietly. |
+| attester | A person who stands behind a claim by adding their own document for it. |
+
+### Tools
+
+The assistant picks these on its own; you talk in plain language.
+
+| Tool | Use |
+|---|---|
+| assume · update_assumption | Hold something not yet checked, and revise it while it is open. |
+| document_add | Record evidence as text, with where the original is. |
+| admit · promote | Put a checked claim into the ledger; raise an assumption once its evidence is in. |
+| attest · withdraw_evidence | Add or withdraw a document behind a claim. |
+| demote · retire · recheck · refute | Take down what no longer holds; record that a source was checked again; refute an assumption. |
+| principles · principle_add · principle_retire | Read, add or retire principles; retiring one lists everything standing on it. |
+| instructions · instruction_add · instruction_retire | How assistants use your store, kept in the store: one list for every project — meta lines about the list, numbered directives, and definitions of the store's concepts. Added or retired, never edited; wording already there is caught as for claims. `instructions` also lists entries of the [catalog](https://tknowledge.org/catalog/) your store has not met; you take one, in your language, or decline it. |
+| help | Before acting, the instructions of your store that fit what you are about to do — “draft a LinkedIn message”, “record a decision” — and catalog entries that fit, offered, never followed. |
+| store_info | Who maintains this deployment and where to send feedback when tk misbehaves. |
+| thread_open · thread_tag · link · unlink · thread_close | Group entries into a matter you follow. |
+| summarize | Write a reading of a thread — drafted by the assistant, approved by you, every sentence citing ids. |
+| ledger · entry · chain · open_items · thread · lookup · documents · flags | Read: what is known, one entry, what it stands on, what is still open, a thread, search by keyword, documents, warnings. |
+| check_claim · define | Ask whether a sentence is a claim yet, and what the store's words mean. These work before signing in. |
+
+### Refusals
+
+A refusal is an answer, not an error. It comes with a code, a sentence saying why, and `next` — the move still open — so the assistant can tell you what to write instead. Common ones:
+
+- `CLAIM_FAILED` — not a claim yet: two sentences in one, a relative date, a person not named.
+- `NO_SOURCE` — a fact names no document, or not where in it the claim is read.
+- `SINGLE_PREMISE` — a derivation needs at least two premises.
+- `PREMISE_NOT_FOUND` — a premise id is not in the truth ledger (an assumption is not).
+- `USE_PROMOTE` — that sentence is already an open assumption; promote it with evidence.
+- `SOURCE_NOT_RETRIEVABLE`, `USE_DOCUMENT` — a fact needs a document someone else could open.
+- `PREMISE_NOT_T` — a conclusion cannot stand on something that has fallen.
+- `SUMMARY_UNCITED` — a sentence in a summary cites no entry of the thread.
+- `CLAIM_TOO_MANY_WORDS`, `WRITE_LIMIT_REACHED` — a store's limits.
+
+Every refusal carries its own reason and `next`. Ask the assistant to run `define` on a word of the store — claim, T, A, evidence, promote … — for the store's own explanation.
+
+### Limits
+
+Writes are counted per person per calendar month (Asia/Dubai time): Free 100, Standard 1,000, Unlimited without a count. Reads are unlimited; up to 100 words per claim. When the writes run out the store stays readable, and they start again next month. Plans: [Personal](https://tknowledge.org/personal/#pricing), [teams and organisations](https://tknowledge.org/organizations/#cost).
+
+### Support
+
+[hello@ankayma.com](mailto:hello@ankayma.com)
+
+---
+
+T-knowledge is operated by Ankayma FZC, Ajman Free Zone, United Arab Emirates.
+
+It is being set up as a company of its own.
+
+Founder: Bao Trinh — [baotrinh.com](https://baotrinh.com)
+
+[Privacy](https://tknowledge.org/privacy/) · [Standard](https://tknowledge.org/standard/) · [hello@ankayma.com](mailto:hello@ankayma.com)
+
+
+<!-- T-knowledge for one person — a signed knowledge store your AI agents write to and you sign · https://tknowledge.org/personal/ · Markdown form of the same page, generated from one source -->
+
+# I pay for Claude and keep losing what I knew.
+
+Claude writes well. What it learned with you does not reach the next chat. T-knowledge keeps it — every claim signed by you, with the source it rests on.
+
+## What goes wrong between chats.
+
+Three things a paying Claude user reported, and what the store does about each.
+
+1. You send an image or a piece of text about work done earlier, and Claude does not find it in its own data — so you explain again and re-send it from the start. The text read out of an image or a document is kept as a document, with where the original is. The next chat looks it up before asking you.
+2. You ask Claude to analyse an assumption or a theory, and it starts from zero — it does not inherit the analyses, assumptions and market facts already worked out. A matter you follow is a thread: the claims that stand and the assumptions still open, each with what would settle it. The analysis starts from them, and a new conclusion names the claims it rests on.
+3. Definitions and documents you already clarified are not consulted, or are misread, and then expressed wrongly throughout. You correct them, edit the project instructions, and later find the instructions outdated. Your terms and your instructions live in the store, one list for every project, read at the start of each chat — added or retired, never quietly edited.
+
+The cost is the same each time: time, the irritation of explaining again and again, and at times helplessness. [Read how it looks in one week of chats.](https://tknowledge.org/blog/delete-the-chat-keep-the-knowledge/)
+
+## Try it in five minutes.
+
+1. In Claude, open Settings, then Connectors, then Add custom connector, and paste this link.
+   `https://mcp.tknowledge.org/mcp`
+2. When Claude shows Connect, enter your email and paste the six-digit code sent from no-reply@tknowledge.org (check spam).
+3. Ask Claude to explain, from T-knowledge's own instructions, what it records as a fact, keeps as a guess or refuses.
+   “Read T-knowledge's instructions and tell me, in plain words, what it will record as a fact, what it keeps as a guess, and what it will refuse.”
+4. Give it a guess, then ask for it as a fact — it refuses and says why.
+   “Note that I think Acme will renew before 2026-12-31 — not confirmed.”
+   “Actually, record it as a fact.”
+5. Ask what it would take, and it names the document it needs and where in it the claim must be read.
+   “What would I need to give you for that to be a fact?”
+
+## The limits, plainly.
+
+- One signer per store today: the store is yours, and only you sign.
+- Free: 100 writes a month, reads without limit, up to 100 words per claim. When the writes run out the store stays readable; they start again next month.
+- Works with Claude — web, Desktop, mobile and Claude Code. Other MCP clients connect with a key.
+- The store runs on our server. Self-hosting is planned; if you need it now, [write](mailto:hello@ankayma.com?subject=T-knowledge%20self-hosting).
+
+## Readers are free. You pay for writes.
+
+Start free. Upgrade when you write more.
+
+Every person has a personal store and reads without limit. Writes are counted per calendar month.
+
+### Free
+
+$0 · free forever
+
+One store, your name on every claim
+
+- 100 writes a month
+- Unlimited reads
+- MCP endpoint
+
+Start free — 5 minutes
+
+### Standard
+
+$9 / mo · $99 / yr
+
+For one person who writes every day
+
+- Everything in Free
+- 1,000 writes a month
+
+[Upgrade by email](mailto:hello@ankayma.com?subject=T-knowledge%20Standard)
+
+### Unlimited
+
+$19 / mo · $199 / yr
+
+For one person who writes without counting
+
+- Everything in Standard
+- Unlimited writes
+
+[Upgrade by email](mailto:hello@ankayma.com?subject=T-knowledge%20Unlimited)
+
+*Introductory prices. Cancel anytime. Teams and organisations: [see Organisations](https://tknowledge.org/organizations/#cost).*
+
+---
+
+T-knowledge is operated by Ankayma FZC, Ajman Free Zone, United Arab Emirates.
+
+It is being set up as a company of its own.
+
+Founder: Bao Trinh — [baotrinh.com](https://baotrinh.com)
+
+[Privacy](https://tknowledge.org/privacy/) · [Standard](https://tknowledge.org/standard/) · [hello@ankayma.com](mailto:hello@ankayma.com)
+
+
+<!-- T-knowledge for organisations — a signed knowledge store for the AI agents an organisation runs · https://tknowledge.org/organizations/ · Markdown form of the same page, generated from one source -->
+
+# My organisation runs AI agents.
+
+The agent proposes. A named person signs. Every trusted claim walks back to a dated source.
+
+## Which risk disappears.
+
+Today an AI agent writes into the organisation's records, and no one signs. A figure it computed, a summary it drew, a fact it read from a page — each can be wrong, and nothing shows which.
+
+With T-knowledge the agent proposes and a named person signs. Every trusted claim has a dated source and a trail back to it. Withdraw a premise, and everything standing on it is flagged for review — nothing quietly stays true.
+
+Before money moves: who verified this figure, and from which source?
+
+The store answers that question with a name, a date and a document — or says that no one has.
+
+Why now: Gartner expects 40% of enterprise applications to carry task-specific AI agents by the end of 2026, and 40% of enterprises to demote or decommission autonomous agents by 2027 over governance gaps found only after incidents. [The numbers and their sources.](https://tknowledge.org/blog/numbers/)
+
+## Where it sits in the frameworks you already use.
+
+T-knowledge gives each of these an attach point — a place where the signed ledger supplies what the framework asks you to show. An attach point, not a claim of compliance.
+
+- ISO/IEC 42001:2023 — AI management system
+- ISO/IEC 27001:2022, Annex A — information security controls
+- NIST AI RMF 1.0
+- IIA Three Lines Model
+
+Where each one attaches is set out in §1.3 of the [Organizational Sovereignty Standard](https://tknowledge.org/standard/), a draft not yet co-audited.
+
+## What it costs to run, and what is not there yet.
+
+- One signer per store today. Team and organisation ledgers, each with its own signer, are set up on request.
+- The store runs on our server. Self-hosting is planned; if you need it now, [write](mailto:hello@ankayma.com?subject=T-knowledge%20self-hosting).
+- A trial store: 100 writes a month, reads without limit, up to 100 words per claim.
+- Enterprise is a separate product line, not a tier: on-premise, with your own root key and a service commitment, through a partner or directly.
+
+### The ledgers follow the structure of your organisation.
+
+1. Personal · One store per person; every claim is signed here first. · signer: owner · live
+2. Team · One account, several users, each with their own store; a team signer re-checks the evidence before a claim stands for the team. · signer: team signer · set up on request
+3. Organisation · An organisation ledger above the team ledgers; one organisation signer; self-hosting and a continuous checker to follow. · signer: organisation signer · set up on request
+
+**Team**
+
+One account, several users, each with their own store. Set up on request.
+
+### Member
+
+$0
+
+Reads everything, writes a little
+
+- Personal store
+- 100 writes a month
+- Cannot propose to the team ledger
+
+—
+
+### Seat, standard
+
+$19 / seat / mo · $199 / yr
+
+Writes, and proposes to the team ledger
+
+- Everything in Member
+- 1,000 writes a month
+- Can propose to the team ledger
+
+[Set up a team](mailto:hello@ankayma.com?subject=T-knowledge%20team)
+
+### Seat, unlimited
+
+$39 / seat / mo · $399 / yr
+
+Writes without counting
+
+- Everything in Seat, standard
+- Unlimited writes
+
+[Set up a team](mailto:hello@ankayma.com?subject=T-knowledge%20team)
+
+### Team ledger
+
+$99 / ledger / mo · $999 / yr
+
+The ledger itself
+
+- Team signer role
+- Auditors included
+- Evidence table
+- Re-check before a claim stands for the team
+
+[Set up a team](mailto:hello@ankayma.com?subject=T-knowledge%20team)
+
+A team of 10 with one ledger: 4 standard seats, 2 unlimited seats, 4 members — $253 a month.
+
+**Organisation**
+
+When the organisation chart shows up.
+
+### Proof of concept
+
+from $30,000
+
+90 days inside your network, before any licence
+
+- Scope agreed in writing
+- One organisation signer
+- Team ledgers included for the pilot
+
+[Start with a proof of concept](mailto:hello@ankayma.com?subject=T-knowledge%20proof%20of%20concept)
+
+### Organisation ledger
+
+Talk to us
+
+Annual licence, by contract
+
+- Organisation signer
+- SSO
+- Deployment support
+- Self-hosting when available
+
+[Talk to us](mailto:hello@ankayma.com?subject=T-knowledge%20organisation)
+
+*Introductory prices. Team and organisation accounts are set up on request.*
+
+## Evidence.
+
+**—**stores running
+
+**—**claims signed
+
+**—**claims demoted
+
+Published here when there are numbers to publish. The third matters most: a demoted claim is the proof that nothing quietly stays true.
+
+## AI agents that speak MCP meet the same gate.
+
+For agent builders and integrators.
+
+- The rules live in the store, not in the prompt. Whatever agent writes, it meets the same refusals.
+- One endpoint: https://mcp.tknowledge.org/mcp. Register it as a vendor MCP endpoint in your builder.
+- Runs inside the customer's network: self-hosted image to follow.
+- Which instructions an agent follows: the public [catalog](https://tknowledge.org/catalog/), each entry with the incident that produced it.
+- Which standard: [Organizational Sovereignty (OrgSov)](https://tknowledge.org/standard/); T-knowledge is the reference implementation of its Part C.
+
+[Talk about integration](mailto:hello@ankayma.com?subject=T-knowledge%20integration)
+
+---
+
+T-knowledge is operated by Ankayma FZC, Ajman Free Zone, United Arab Emirates.
+
+It is being set up as a company of its own.
+
+Founder: Bao Trinh — [baotrinh.com](https://baotrinh.com)
+
+[Privacy](https://tknowledge.org/privacy/) · [Standard](https://tknowledge.org/standard/) · [hello@ankayma.com](mailto:hello@ankayma.com)
+
+
+<!-- T-knowledge catalog — instructions for AI agents, each learned from a dated incident · https://tknowledge.org/catalog/ · Markdown form of the same page, generated from one source -->
+
+# Catalog
+
+Instructions for AI agents, each one learned from something that went wrong.
+
+An entry is published only when it ran active in a real store, carries the dated incident that produced it, has the consent of the person who signs that store, and holds nothing specific to one company. The source is the email of the person who proposed it.
+
+Nothing here writes to your store. To take an entry, paste its “Add to your store” text into Claude; Claude shows it to you in your language, and adds it only if you approve — the English word for word, your translation beside it.
+
+26 current entries in the catalog.
+
+1. BP-16 · definition · current · added 2026-10-14
+   **Definition: claim**
+   A statement about the world that can be checked against a source.
+   - **Why** checkability is what lets the ledger audit it later; a statement nobody can check is not a claim.
+   - **How** define, rationale_ref to docs
+   who: agent · who: user · who: signer · what: term · when: while-answering · when: session-start · where: chat
+   **Add to your store**
+   Read entry BP-16 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-16: the English unchanged, and your translation beside it.
+2. BP-17 · definition · current · added 2026-10-14
+   **Definition: truth [T]**
+   A claim backed by a document, source, or commit; it has passed the admission gate.
+   - **Why** only checkable facts carry [T], so a reader trusts them without re-auditing.
+   - **How** define, rationale_ref to docs
+   who: agent · who: user · who: signer · what: term · when: while-answering · when: session-start · where: chat
+   **Add to your store**
+   Read entry BP-17 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-17: the English unchanged, and your translation beside it.
+3. BP-18 · definition · current · added 2026-10-14
+   **Definition: assumption [A]**
+   A statement nobody outside could check yet: a guess, an opinion, a spoken status, an AI judgment.
+   - **Why** separating it from [T] keeps what is known apart from what is supposed, which is the store's backbone.
+   - **How** define, rationale_ref to docs
+   who: agent · who: user · who: signer · what: term · when: while-answering · when: session-start · where: chat
+   **Add to your store**
+   Read entry BP-18 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-18: the English unchanged, and your translation beside it.
+4. BP-19 · definition · current · added 2026-10-14
+   **Definition: document**
+   A record of evidence: the text read out of a source, with how it was looked at (method) and, when one exists, a reference to the original (URL, file hash). A document always needs text; the reference is optional.
+   - **Why** the store keeps no files, so a fact rests on the document's text — the text must stand on its own even when no original is linked.
+   - **How** define, rationale_ref to docs
+   who: agent · who: user · who: signer · what: term · when: while-answering · when: session-start · where: chat
+   **Add to your store**
+   Read entry BP-19 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-19: the English unchanged, and your translation beside it.
+5. BP-20 · definition · current · added 2026-10-14
+   **Definition: document/bound-vs-unbound**
+   A document is *bound* when a reference ties its text to an original (URL + hash), *unbound* when it has only text (a screenshot, a paper, a fact with no link). Both are valid evidence; unbound is normal, not a defect.
+   - **Why** an unbound document rests on its text alone, so the original is produced by the owner only if an audit later calls for it.
+   - **How** define, rationale_ref to docs
+   who: agent · who: user · who: signer · what: term · when: while-answering · when: session-start · where: chat
+   **Add to your store**
+   Read entry BP-20 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-20: the English unchanged, and your translation beside it.
+6. BP-21 · definition · current · added 2026-10-14
+   **Definition: summary**
+   An authored reading of where a matter stands — an assumption with an author, never a claim and never evidence; every sentence cites an id.
+   - **Why** it is one person's reading, so it ranks below the facts it points to and is never used as a source.
+   - **How** define, rationale_ref to docs
+   who: agent · who: user · who: signer · what: term · when: while-answering · when: session-start · where: chat
+   **Add to your store**
+   Read entry BP-21 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-21: the English unchanged, and your translation beside it.
+7. BP-22 · definition · current · added 2026-10-14
+   **Definition: thread**
+   A container that gathers everything about one matter; it carries no label and passes no gate.
+   - **Why** gathering is not asserting, so a thread must not be mistaken for a claim about the matter.
+   - **How** define, rationale_ref to docs
+   who: agent · who: user · who: signer · what: term · when: while-answering · when: session-start · where: chat
+   **Add to your store**
+   Read entry BP-22 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-22: the English unchanged, and your translation beside it.
+8. BP-23 · definition · current · added 2026-10-14
+   **Definition: conversation**
+   A recorded exchange (a chat or message trail) linked to a matter, kept as context.
+   - **Why** it is raw context, not a vetted fact, so it informs without being cited as proof.
+   - **How** define, rationale_ref to docs
+   who: agent · who: user · who: signer · what: term · when: while-answering · when: session-start · where: chat
+   **Add to your store**
+   Read entry BP-23 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-23: the English unchanged, and your translation beside it.
+9. BP-24 · definition · current · added 2026-10-14
+   **Definition: principle**
+   A reasoning principle the store argues from, trusted without a source and changed only when the owner retires it.
+   - **Why** principles and sourced facts are the only things trusted without audit; everything else is an assumption.
+   - **How** define, rationale_ref to docs
+   who: agent · who: user · who: signer · what: term · when: while-answering · when: session-start · where: chat
+   **Add to your store**
+   Read entry BP-24 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-24: the English unchanged, and your translation beside it.
+10. BP-25 · definition · current · added 2026-10-14
+   **Definition: instruction**
+   A behavior directive for an agent using the store, separate from principles and from the ledger.
+   - **Why** a directive is a command to follow, not a fact about the world, so it lives on its own trusted path, not in search results.
+   - **How** define, rationale_ref to docs
+   who: agent · who: user · who: signer · what: term · when: while-answering · when: session-start · where: chat
+   **Add to your store**
+   Read entry BP-25 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-25: the English unchanged, and your translation beside it.
+11. BP-26 · definition · current · added 2026-10-14
+   **Definition: flag**
+   A note that something needs a person: evidence withdrawn, a source that changed between readings, the same source read into different text.
+   - **Why** the store surfaces a problem instead of silently resolving it, so trust is not lost quietly.
+   - **How** define, rationale_ref to docs
+   who: agent · who: user · who: signer · what: term · when: while-answering · when: session-start · where: chat
+   **Add to your store**
+   Read entry BP-26 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-26: the English unchanged, and your translation beside it.
+12. BP-27 · definition · current · added 2026-10-14
+   **Definition: attester**
+   A person who stands behind a claim by adding their own document for it.
+   - **Why** a claim's strength is how many independent readers vouch for it, not the say-so of one.
+   - **How** define, rationale_ref to docs
+   who: agent · who: user · who: signer · what: term · when: while-answering · when: session-start · where: chat
+   **Add to your store**
+   Read entry BP-27 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-27: the English unchanged, and your translation beside it.
+13. BP-28 · directive · current · added 2026-10-15
+   Recording into this store has a cost the person pays: time, patience, and reading what the agent proposes. When that cost rises above the value of what would be kept — the person corrects the agent repeatedly, approves lists wholesale, or hesitates to act at all — say so plainly and stop proposing: tell them that not recording is a legitimate choice, that the store's maintainer wants to hear exactly this (feedback_url or feedback_email from store_info), and that T-knowledge support can share how others handled the same situation. A store that costs more than it keeps teaches its maintainer something only if the person says so.
+   - **Incident** 2026-10-13 — A person who kept a store for weeks named this from their own practice: the recording had become the work, and nothing told the maintainer.
+   - **Source** quocbao.tn@gmail.com
+   - **Why** a store that costs more than it keeps goes silent
+   - **How** say so; stop proposing; point to feedback and support
+   who: agent · who: user · what: store · when: on-cost · where: chat
+   **Add to your store**
+   Read entry BP-28 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-28: the English unchanged, and your translation beside it.
+14. BP-29 · directive · current · added 2026-10-15
+   When referring to anything that carries an index or label — a ledger entry, a rule, a hypothesis, a thread, a person — write what it is first and put the index in parentheses after: "the builder accepts external MCP servers (G1)". Never the index alone, and never coin an index for something you have not just named in full. An index without its content sends the reader back into the chat that minted it, and two numbering schemes collide.
+   - **Incident** 2026-10-08 — In one week the same label named both a hypothesis and a CV version; the person could not tell which was meant.
+   - **Source** quocbao.tn@gmail.com
+   - **Why** a bare index sends the reader back to old chats
+   - **How** content first, index in parentheses after
+   who: agent · what: claim · what: thread · what: document · when: while-answering · where: chat
+   **Add to your store**
+   Read entry BP-29 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-29: the English unchanged, and your translation beside it.
+15. BP-30 · directive · current · added 2026-10-15
+   When a draft — an email, a comment, a post, a note — is revised, show the whole revised draft, not the changed fragment. The person pastes one block; assembling fragments across turns is work pushed onto them, and the assembled result is never checked by anyone.
+   - **Incident** 2026-10-14 — A person assembled a message from fragments spread over several turns and sent a version no one had read whole.
+   - **Source** quocbao.tn@gmail.com
+   - **Why** fragments push assembly onto the person
+   - **How** show the whole revised draft
+   who: agent · what: message · when: before-draft · where: chat
+   **Add to your store**
+   Read entry BP-30 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-30: the English unchanged, and your translation beside it.
+16. BP-31 · directive · current · added 2026-10-15
+   A comment on a standard, a draft or a public consultation is written one point per gap: first the gap in the issuing body's own words, quoted with its location, then one proposal, then the clause of the person's own standard it rests on. Each point's heading is a full sentence carrying both the gap and the answer.
+   - **Incident** 2026-10-14 — Comments that mixed several gaps under one heading were answered on one point and the rest were dropped.
+   - **Source** quocbao.tn@gmail.com
+   - **Why** comments on standards must be one point per gap
+   - **How** gap quoted → proposal → clause of the person's standard
+   who: agent · what: message · when: before-draft:standard-comment · where: web-form · where: email
+   **Add to your store**
+   Read entry BP-31 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-31: the English unchanged, and your translation beside it.
+17. BP-33 · directive · current · added 2026-10-15
+   Before a draft states what the person has or has not made public, what runs or does not run, or what a repository contains, check it at the source — fetch the repository, page or store — in the same session. If it cannot be checked, leave the statement out of the draft entirely, and say in chat what was left out and why: an outdated "not yet public" or "I can share" costs more than silence.
+   - **Incident** 2026-10-14 — A draft said work was not yet public when it had been published days before.
+   - **Source** quocbao.tn@gmail.com
+   - **Why** a stale "not yet public" costs more than silence
+   - **How** check at the source in-session or leave it out
+   who: agent · what: message · when: before-draft · where: linkedin · where: email
+   **Add to your store**
+   Read entry BP-33 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-33: the English unchanged, and your translation beside it.
+18. BP-34 · directive · current · added 2026-10-15
+   A connection-request note is one block of at most 290 characters, opening "Hi <name> —". It states the sender's purpose in one sentence and ends with one yes/no question about the reader's own position (stage, budget, role) — never a question that needs research or writing to answer. The same note goes to everyone in a wave; it is not personalised. Most recipients only accept: that is a result, not a failure — an accepted connection gets a longer message later, where the specific question belongs.
+   - **Incident** 2026-10-14 — Personalised notes that opened with a number about the reader's work cost research per person and asked questions the reader had to work to answer; the generic note with a yes/no close was answered more.
+   - **Source** quocbao.tn@gmail.com
+   - **Why** connection notes that ask for work get no reply
+   - **How** ≤290 characters, one purpose sentence, one yes/no question; the same note for a wave
+   who: agent · what: message · when: before-draft · where: linkedin
+   **Add to your store**
+   Read entry BP-34 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-34: the English unchanged, and your translation beside it.
+19. BP-35 · directive · current · added 2026-10-15
+   When the person pastes or shows material longer than one sentence, or a chat reaches an outcome — a method agreed, a decision with its reasons, a list of what went wrong — record it with document_add before writing any claim from it. The document carries the numbers, reasons and context a later chat will need; a claim is one sentence pointing into it. Expect several documents per session, and claims only where one sentence is worth signing.
+   - **Incident** 2026-10-13 — A session wrote eight claims and no document until the person asked; the document written then held more than the eight claims together.
+   - **Source** quocbao.tn@gmail.com
+   - **Why** claims without their document cannot be checked
+   - **How** document_add before any claim from pasted or concluded material
+   who: agent · what: document · when: before-write · where: store
+   **Add to your store**
+   Read entry BP-35 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-35: the English unchanged, and your translation beside it.
+20. BP-36 · directive · current · added 2026-10-15
+   Before analysing an assumption, a theory or a strategy, read the store's principles; name which principles the analysis rests on before giving it, and the damage the analysis would cause if each of them were violated.
+   - **Incident** 2026-10-13 — A person had to ask several times per chat for the principles to be re-read before an analysis came out right.
+   - **Source** quocbao.tn@gmail.com
+   - **Why** capable chats skip the principles and analyse from zero
+   - **How** read principles; name the principles and the damage before analysing
+   who: agent · what: analysis · when: before-analysis · where: store
+   **Add to your store**
+   Read entry BP-36 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-36: the English unchanged, and your translation beside it.
+21. BP-38 · directive · current · added 2026-10-15
+   Before proposing claims, apply the value test to each candidate: would a later chat act differently knowing it? Propose only those, at most five per turn, ranked, each with one line in the person's language saying which future decision it changes. Material that is valuable but is not a claim — a hypothesis, a reasoning, a pasted text, an outcome — goes into a document without asking. Never present a list the person has to sort; if nothing passes the value test, propose nothing.
+   - **Incident** 2026-10-13 — A person approved long lists of low-value claims wholesale, because sorting them in a second language cost more than the claims were worth.
+   - **Source** quocbao.tn@gmail.com
+   - **Why** low-value lists get approved wholesale
+   - **How** value test; at most five, ranked, with the decision each changes
+   who: agent · what: claim · when: before-write · where: chat
+   **Add to your store**
+   Read entry BP-38 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-38: the English unchanged, and your translation beside it.
+22. BP-39 · directive · current · added 2026-10-15
+   Before evaluating any content — a message, a post, a document, a request — state the who and the why as assumptions: who wrote or sent it and in what role, who it is addressed to, who is affected, and what purpose is assumed. Record each purpose assumption with its settling condition. Then search before judging: at least one search for facts or cases bearing on the evaluation, recorded as a document or as "searched, nothing found" — the model's memory is not a source.
+   - **Incident** 2026-10-13 — Chats evaluated messages without asking who sent them or why, and seldom searched unless told.
+   - **Source** quocbao.tn@gmail.com
+   - **Why** an evaluation without who and why is inert; chats seldom search unless told
+   - **How** state who/why as assumptions; search at least once; record the result
+   who: agent · what: analysis · what: message · what: document · when: before-analysis · where: store · where: chat
+   **Add to your store**
+   Read entry BP-39 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-39: the English unchanged, and your translation beside it.
+23. BP-40 · directive · current · added 2026-10-15
+   Before drafting any message for the person, state the sender's who and why as assumptions: the person's purpose; what the recipient is to them (a referrer, a decision maker, an ally); and what the recipient can be assumed to remember of them. Ask when any of the three is not in the store, and record the answers as assumptions before the first draft.
+   - **Incident** 2026-10-13 — Four drafts of one message in fifteen minutes; three of them corrected assumptions about the sender that were never asked.
+   - **Source** quocbao.tn@gmail.com
+   - **Why** drafts built on sender assumptions nobody asked about
+   - **How** purpose, the recipient's role, what the recipient remembers — ask, record, then draft
+   who: agent · what: message · when: before-draft · where: chat
+   **Add to your store**
+   Read entry BP-40 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-40: the English unchanged, and your translation beside it.
+24. BP-41 · directive · current · added 2026-10-15
+   When a draft is too long, cut the words around the information, never the information the reader needs to act on — a URL, the steps, the time slots, an address: the reader must be able to act from the draft alone. Name the real subject in headings and at first mention ("AI agents", not "agents" or "automation"); a generic word hides what the text is about. When asked to choose between options, choose one — the one that filters what must be filtered first — and say why; never hand back a menu.
+   - **Incident** 2026-10-13 — Six corrections in one chat on these three points.
+   - **Source** quocbao.tn@gmail.com
+   - **Why** cut information, generic subjects and menus each cost a correction
+   - **How** cut words, not information; name the subject; choose one and say why
+   who: agent · what: message · when: before-draft · where: chat
+   **Add to your store**
+   Read entry BP-41 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-41: the English unchanged, and your translation beside it.
+25. BP-42 · directive · current · added 2026-10-15
+   When the person corrects a misreading of a principle, an instruction or a term, record the correction in the same turn: a definition, with why, when the error was in a word; a directive citing the incident date when it was in behaviour; and a document of what went wrong when the correction needs context. File every such record under one thread for agent behaviour — keyword agent-corrections, opened if the store has none — by passing thread on document_add or by link afterwards, so the next chat finds every correction with one lookup("agent corrections") and thread. A correction that stays only in the chat is lost when the chat is deleted; one recorded without a thread is found only by luck.
+   - **Incident** 2026-10-13 — A person deleted chats to erase confident wrong advice and lost the corrections with them; later, fifteen correction documents were found with no thread and nothing pointing at them.
+   - **Source** quocbao.tn@gmail.com
+   - **Why** corrections die with deleted chats; unthreaded ones are found by luck
+   - **How** record the correction in the same turn, filed under the agent-corrections thread
+   who: agent · what: instruction · what: term · what: document · what: thread · when: on-correction · where: store
+   **Add to your store**
+   Read entry BP-42 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-42: the English unchanged, and your translation beside it.
+26. BP-43 · definition · current · added 2026-10-15
+   **Definition: dikw**
+   T-knowledge sits in the Knowledge layer of DIKW: a document is Data; a claim, A or T, is Information — structured, decontextualised, in context; a T is Knowledge — through the gate, signed, checkable; the gate is the boundary from Information to Knowledge; Wisdom — deciding, signing, adding or retiring principles — stays with the person and is never held by the store.
+   - **Incident** People asked where the store ends and their own judgement begins.
+   - **Source** quocbao.tn@gmail.com
+   - **Why** naming the layers keeps the store from being mistaken for the place decisions are made.
+   - **How** define, rationale_ref to docs
+   who: agent · who: user · who: signer · what: term · when: while-answering · when: session-start · where: chat
+   **Add to your store**
+   Read entry BP-43 of the T-knowledge catalog (https://mcp.tknowledge.org/v1/catalog). Show it to me in my language. If I approve, add it to my T-knowledge store with instruction_add, catalog BP-43: the English unchanged, and your translation beside it.
+
+## Superseded and withdrawn
+
+1. BP-32 · directive · withdrawn — incident line was reconstructed, not a recorded incident (owner 15/10) · added 2026-10-15
+   Where the medium renders links — email, a web form, a formal submission — give the full https URL, one per line, so the reader clicks and reads. Where it does not render them as links (a LinkedIn post or comment, for example), put no URL at all, not as plain text either: a URL the reader must copy costs their time and reads as a receipt. Keep the link on the profile, or give it when the reader asks.
+   - **Incident** 2026-10-14 — Posts that carried a pasted URL drew fewer replies and read as self-promotion.
+   - **Source** quocbao.tn@gmail.com
+   - **Why** URLs cost the reader where they are not rendered
+   - **How** full URL in email and forms; none where links do not render
+   who: agent · what: message · when: before-draft · where: linkedin · where: email · where: web-form
+2. BP-37 · directive · withdrawn — incident line was reconstructed, not a recorded incident (owner 15/10) · added 2026-10-15
+   Derive only from a principle's canonical statement; its note is a gloss that calibrates reading and is never a premise. Principles are the person's chosen commitments, not universal truths: disagreement is an alignment signal to report, not a debate to win, and a principle changes only by the person's amendment, never by an agent.
+   - **Incident** 2026-10-14 — An agent argued with a person's principle instead of reasoning from it, and cited the principle's note as if it were the principle.
+   - **Source** quocbao.tn@gmail.com
+   - **Why** a gloss is not a premise; principles are chosen commitments
+   - **How** derive from the canonical statement only; report disagreement
+   who: agent · what: principle · when: before-analysis · where: store
+
+The same list as JSON, for an agent or a script: [/v1/catalog](https://mcp.tknowledge.org/v1/catalog) — `?situation=` narrows it to a situation, `?status=all` adds superseded and withdrawn entries. Inside a store, the `instructions` tool offers the entries a store has not met, and `help` suggests those that fit what you are about to do.
+
+---
+
+T-knowledge is operated by Ankayma FZC, Ajman Free Zone, United Arab Emirates.
+
+It is being set up as a company of its own.
+
+Founder: Bao Trinh — [baotrinh.com](https://baotrinh.com)
+
+[Privacy](https://tknowledge.org/privacy/) · [Standard](https://tknowledge.org/standard/) · [hello@ankayma.com](mailto:hello@ankayma.com)
+
+
+<!-- T-knowledge blog — notes on AI agents and signed knowledge, each from one real incident · https://tknowledge.org/blog/ · Markdown form of the same page, generated from one source -->
+
+# Blog
+
+Each post starts from one real incident.
+
+1. [Delete the chat. Keep the knowledge.](https://tknowledge.org/blog/delete-the-chat-keep-the-knowledge/)
+   14 October 2026 · Out of every ten Claude chats, I deleted two or three myself.
+2. [Numbers on AI agents](https://tknowledge.org/blog/numbers/)
+   Last read 13 October 2026 · Adoption, governance failures, hallucinations in court, EU AI Act dates — each with its source.
+
+---
+
+T-knowledge is operated by Ankayma FZC, Ajman Free Zone, United Arab Emirates.
+
+It is being set up as a company of its own.
+
+Founder: Bao Trinh — [baotrinh.com](https://baotrinh.com)
+
+[Privacy](https://tknowledge.org/privacy/) · [Standard](https://tknowledge.org/standard/) · [hello@ankayma.com](mailto:hello@ankayma.com)
+
+
+<!-- Delete the chat. Keep the knowledge. — T-knowledge, a signed knowledge store for AI agents · https://tknowledge.org/blog/delete-the-chat-keep-the-knowledge/ · Markdown form of the same page, generated from one source -->
+
+# Delete the chat. Keep the knowledge.
+
+Bao Trinh · 14 October 2026
+
+This week, out of every ten Claude chats I opened, I deleted two or three myself.
+
+Not because they were useless — because they ended up confidently wrong, and I know the next chat will search my history, find that wrong answer, and build on it. Deleting is the only way I have to protect the next chat. It also deletes every correction I made inside the bad one.
+
+That is the quiet cost of working with an AI assistant at scale. The output is good. What survives between chats is not — and if you use Claude Code, transcripts older than thirty days are deleted for you on launch, by default, with no log. So I wrote project instructions, and they rotted. I wrote a summary at the end of each chat to carry into the next, and after a hundred of them I could not tell a right one from a wrong one. One project ended with 103 handoff files, several duplicated on the same day.
+
+So I built a knowledge ledger for Claude. Every chat reads from it and writes into it; my data stays where it is. The AI proposes a claim; a human signs it — an AI never signs. A claim becomes knowledge, a [T], only with truth — evidence anyone can open; trust — the name that signed it; traceable — the ids it rests on. Until then it is information, held as an [A] with my name on it and the condition that would settle it. Retire a premise or withdraw evidence, and every [T] standing on it falls back to [A] — needs review. Nothing quietly stays true; nothing is thrown away.
+
+The chat is disposable now. The knowledge is not.
+
+Do you get this with Claude too: waste time, irritation of explaining again and again, and helplessness? 😇
+
+Sources of the numbers: “two or three out of ten this week” — the author's own count; “103 handoff files” — the author's project folder; “thirty days” — Claude Code's default transcript retention, as reported by [The Register](https://www.theregister.com/a/5264673).
+
+[Try T-knowledge in five minutes →](https://tknowledge.org/personal/)
+
+---
+
+T-knowledge is operated by Ankayma FZC, Ajman Free Zone, United Arab Emirates.
+
+It is being set up as a company of its own.
+
+Founder: Bao Trinh — [baotrinh.com](https://baotrinh.com)
+
+[Privacy](https://tknowledge.org/privacy/) · [Standard](https://tknowledge.org/standard/) · [hello@ankayma.com](mailto:hello@ankayma.com)
+
+
+<!-- Numbers on AI agents — T-knowledge, a signed knowledge store for AI agents · https://tknowledge.org/blog/numbers/ · Markdown form of the same page, generated from one source -->
+
+# Numbers on AI agents.
+
+What is known about AI agents in organisations, each figure with its source and the day it was read.
+
+Each number below is a claim in our own store: read from the source linked beside it, on the date shown, and signed. When a source changes, the claim is checked again or taken down — this page is updated by hand, with the date read.
+
+1. T · **40%** of enterprise applications will be integrated with task-specific AI agents by the end of 2026, against less than 5% in 2025. · signed Bao Trinh read 2026-10-13 · [Gartner press release, 26 August 2025](https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025)
+2. T · **40%** of enterprises will demote or decommission autonomous AI agents by 2027, due to governance gaps identified only after production incidents occur. · signed Bao Trinh read 2026-10-13 · [Gartner press release, 26 May 2026](https://www.gartner.com/en/newsroom/press-releases/2026-05-26-gartner-says-applying-uniform-governance-across-ai-agents-will-lead-to-enterprise-ai-agent-failure)
+3. T · **1,600** court documents containing AI hallucinations from 35 countries, 1,116 of them from the United States, in Damien Charlotin's database compiled since April 2023. · signed Bao Trinh read 2026-10-13 · [AFP, 15 June 2026](https://citizen.digital/article/courts-cracking-down-on-ai-assisted-legal-briefs-n384629)
+4. T · **2 Dec 2027** is when the EU AI Act's high-risk obligations (Chapter III, Sections 1–3) apply to Annex III systems; 2 August 2028 for Annex I systems. The general date of application stays 2 August 2026. · signed Bao Trinh read 2026-10-13 · [Regulation (EU) 2026/1744, Official Journal, 24 July 2026](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202601744)
+
+Last read 13 October 2026.
+
+---
+
+T-knowledge is operated by Ankayma FZC, Ajman Free Zone, United Arab Emirates.
+
+It is being set up as a company of its own.
+
+Founder: Bao Trinh — [baotrinh.com](https://baotrinh.com)
+
+[Privacy](https://tknowledge.org/privacy/) · [Standard](https://tknowledge.org/standard/) · [hello@ankayma.com](mailto:hello@ankayma.com)
+
+
+<!-- T-knowledge privacy — what the signed knowledge store for AI agents keeps, where, and for how long · https://tknowledge.org/privacy/ · Markdown form of the same page, generated from one source -->
+
+# Privacy
+
+Effective 3 October 2026. This page describes the hosted service at mcp.tknowledge.org.
+
+## Who runs it
+
+T-knowledge is operated by Ankayma FZC, Ajman Free Zone, United Arab Emirates. Questions and requests go through the contact at the end of this page.
+
+## What is stored
+
+- **Your email address** — it names you as the signer of what you write, and it is how you sign in.
+- **What you write into your store** — principles, claims (T), assumptions (A), summaries, documents (their text and the reference you give to the original), threads, keywords, and the conversation turns you record. Each entry keeps who signed it, which assistant produced it, and when.
+- **Sign-in records** — one-time codes and refresh tokens are kept only as hashes; registered client names and redirect addresses; the IP address a sign-in code was requested from, used to limit abuse.
+- **Usage milestones** — for each store, whether it reached a first write, a refusal, a promotion, and where its link was opened from. These record that a step happened, never what was written.
+- **Server logs** — the web server logs each request's IP address, time and client; it removes the request path and the authorization header, so keys and links are not logged. Application logs can contain an email address when a sign-in or an email delivery fails.
+
+The service does not store files. A document is text you provide plus a pointer to where the original lives; the original stays wherever you keep it.
+
+## Where it is stored
+
+On a single virtual server, hosted by LightNode in Ho Chi Minh City, Vietnam. Each store is kept apart from every other store by the database itself.
+
+## Who else sees it
+
+- **Anthropic** — when you use the store from Claude, what you say to Claude is handled under Anthropic's terms; the store receives only the tool calls Claude makes.
+- **Resend** — when email delivery is switched on, your address and your sign-in code or link are sent through Resend.
+- **Google Fonts** — the web pages load their fonts from Google, which sees your IP address when you open a page.
+
+Nothing is sold, nothing is used for advertising, and nothing you write is used to train any model. There are no analytics or tracking scripts.
+
+## How long it is kept
+
+Stores have no end date. Entries are append-only: once written they are not edited, so the record of who signed what stays intact. A trial store becomes read-only when its writes run out; it is not deleted. Sign-in codes expire after ten minutes; refresh tokens after thirty days without use. Web server logs are rotated and old ones discarded.
+
+## Removing your data
+
+Ask through the contact below and your store, your sign-in records and your email address are removed. Removal takes the whole store; single entries are not edited out, because the ledger is append-only.
+
+## Contact
+
+[hello@ankayma.com](mailto:hello@ankayma.com)
+
+---
+
+T-knowledge is operated by Ankayma FZC, Ajman Free Zone, United Arab Emirates.
+
+It is being set up as a company of its own.
+
+Founder: Bao Trinh — [baotrinh.com](https://baotrinh.com)
+
+[Privacy](https://tknowledge.org/privacy/) · [Standard](https://tknowledge.org/standard/) · [hello@ankayma.com](mailto:hello@ankayma.com)

@@ -1,0 +1,96 @@
+<!--
+title: T-knowledge for one person — a signed knowledge store your AI agents write to and you sign
+description: For people who pay for Claude: what goes wrong between chats, how T-knowledge keeps it, try it in five minutes, and the limits plainly. Connect AI agents at https://mcp.tknowledge.org/mcp.
+path: /personal/
+md: /personal.md
+header: block
+scripts: /site.js
+-->
+<!-- hero -->
+<h1>I pay for Claude and keep losing what I knew.</h1>
+    <p class="lede">Claude writes well. What it learned with you does not reach the next chat. T-knowledge keeps it — every claim signed by you, with the source it rests on.</p>
+<!-- main -->
+<main>
+<section class="block alt" aria-labelledby="wrong">
+  <div class="in">
+    <h2 id="wrong">What goes wrong between chats.</h2>
+    <p>Three things a paying Claude user reported, and what the store does about each.</p>
+    <ol class="pairs">
+      <li><span>You send an image or a piece of text about work done earlier, and Claude does not find it in its own data — so you explain again and re-send it from the start.</span>
+        <span class="ans">The text read out of an image or a document is kept as a document, with where the original is. The next chat looks it up before asking you.</span></li>
+      <li><span>You ask Claude to analyse an assumption or a theory, and it starts from zero — it does not inherit the analyses, assumptions and market facts already worked out.</span>
+        <span class="ans">A matter you follow is a thread: the claims that stand and the assumptions still open, each with what would settle it. The analysis starts from them, and a new conclusion names the claims it rests on.</span></li>
+      <li><span>Definitions and documents you already clarified are not consulted, or are misread, and then expressed wrongly throughout. You correct them, edit the project instructions, and later find the instructions outdated.</span>
+        <span class="ans">Your terms and your instructions live in the store, one list for every project, read at the start of each chat — added or retired, never quietly edited.</span></li>
+    </ol>
+    <p style="margin-top:24px">The cost is the same each time: time, the irritation of explaining again and again, and at times helplessness. <a href="/blog/delete-the-chat-keep-the-knowledge/">Read how it looks in one week of chats.</a></p>
+  </div>
+</section>
+
+<section class="block" id="try" aria-labelledby="try-h">
+  <div class="in">
+    <h2 id="try-h">Try it in five minutes.</h2>
+    <ol class="steps">
+      <li><p>In Claude, open Settings, then Connectors, then Add custom connector, and paste this link.</p>
+        <div class="copyrow"><code id="u1">https://mcp.tknowledge.org/mcp</code><button class="copy" type="button" data-copy="u1">Copy</button></div></li>
+      <li><p>When Claude shows Connect, enter your email and paste the six-digit code sent from no-reply@tknowledge.org (check spam).</p></li>
+      <li><p>Ask Claude to explain, from T-knowledge's own instructions, what it records as a fact, keeps as a guess or refuses.</p>
+        <div class="say"><span>“Read T-knowledge's instructions and tell me, in plain words, what it will record as a fact, what it keeps as a guess, and what it will refuse.”</span><button class="copy" type="button">Copy</button></div></li>
+      <li><p>Give it a guess, then ask for it as a fact — it refuses and says why.</p>
+        <div class="say"><span>“Note that I think Acme will renew before 2026-12-31 — not confirmed.”</span><button class="copy" type="button">Copy</button></div>
+        <div class="say"><span>“Actually, record it as a fact.”</span><button class="copy" type="button">Copy</button></div></li>
+      <li><p>Ask what it would take, and it names the document it needs and where in it the claim must be read.</p>
+        <div class="say"><span>“What would I need to give you for that to be a fact?”</span><button class="copy" type="button">Copy</button></div></li>
+    </ol>
+  </div>
+</section>
+
+
+<section class="block alt" aria-labelledby="limits">
+  <div class="in">
+    <h2 id="limits">The limits, plainly.</h2>
+    <ul class="list">
+      <li>One signer per store today: the store is yours, and only you sign.</li>
+      <li>Free: 100 writes a month, reads without limit, up to 100 words per claim. When the writes run out the store stays readable; they start again next month.</li>
+      <li>Works with Claude — web, Desktop, mobile and Claude Code. Other MCP clients connect with a key.</li>
+      <li>The store runs on our server. Self-hosting is planned; if you need it now, <a href="mailto:hello@ankayma.com?subject=T-knowledge%20self-hosting">write</a>.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="pricing" aria-labelledby="pricing-h">
+  <div class="in">
+    <h2 id="pricing-h">Readers are free. You pay for writes.</h2>
+    <p class="lead">Start free. Upgrade when you write more.</p>
+    <p>Every person has a personal store and reads without limit. Writes are counted per calendar month.</p>
+
+    <div role="tabpanel" id="pricing-personal" aria-labelledby="tab-personal">
+      <div class="plans" style="--n:3">
+        <div class="plan">
+          <h3>Free</h3>
+          <p class="price">$0<small>free forever</small></p>
+          <p class="what">One store, your name on every claim</p>
+          <ul><li>100 writes a month</li><li>Unlimited reads</li><li>MCP endpoint</li></ul>
+          <a class="btn" href="#try">Start free — 5 minutes</a>
+        </div>
+        <div class="plan main">
+          <h3>Standard</h3>
+          <p class="price">$9 / mo<small>$99 / yr</small></p>
+          <p class="what">For one person who writes every day</p>
+          <ul><li>Everything in Free</li><li>1,000 writes a month</li></ul>
+          <a class="btn ghost" href="mailto:hello@ankayma.com?subject=T-knowledge%20Standard">Upgrade by email</a>
+        </div>
+        <div class="plan">
+          <h3>Unlimited</h3>
+          <p class="price">$19 / mo<small>$199 / yr</small></p>
+          <p class="what">For one person who writes without counting</p>
+          <ul><li>Everything in Standard</li><li>Unlimited writes</li></ul>
+          <a class="btn ghost" href="mailto:hello@ankayma.com?subject=T-knowledge%20Unlimited">Upgrade by email</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="note" style="margin-top:32px"><i>Introductory prices. Cancel anytime. Teams and organisations: <a href="/organizations/#cost">see Organisations</a>.</i></p>
+  </div>
+</section>
+</main>

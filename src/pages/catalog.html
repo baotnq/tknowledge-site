@@ -1,0 +1,28 @@
+<!--
+title: T-knowledge catalog — instructions for AI agents, each learned from a dated incident
+description: The T-knowledge instruction catalog: practices for AI agents working in a T-knowledge store, each with the dated incident that produced it. Connect AI agents at https://mcp.tknowledge.org/mcp.
+path: /catalog/
+md: /catalog.md
+header: block page
+scripts: /catalog/catalog.js
+-->
+<!-- hero -->
+<h1>Catalog</h1>
+    <p class="lede">Instructions for AI agents, each one learned from something that went wrong.</p>
+    <p>An entry is published only when it ran active in a real store, carries the dated incident that produced it, has the consent of the person who signs that store, and holds nothing specific to one company. The source is the email of the person who proposed it.</p>
+    <p>Nothing here writes to your store. To take an entry, paste its “Add to your store” text into Claude; Claude shows it to you in your language, and adds it only if you approve — the English word for word, your translation beside it.</p>
+<!-- main -->
+<main class="block alt page">
+  <div class="in">
+    <div class="filters" id="filters" hidden data-md-skip>
+      <label>Who <select data-axis="who"><option value="">any</option></select></label>
+      <label>What <select data-axis="what"><option value="">any</option></select></label>
+      <label>When <select data-axis="when"><option value="">any</option></select></label>
+      <label>Where <select data-axis="where"><option value="">any</option></select></label>
+      <label>Words <input type="search" id="q" placeholder="draft, source, term…"></label>
+      <label><input type="checkbox" id="old"> superseded and withdrawn</label>
+    </div>
+    <!-- catalog -->
+    <p class="small" style="margin-top:32px">The same list as JSON, for an agent or a script: <a href="https://mcp.tknowledge.org/v1/catalog">/v1/catalog</a> — <code>?situation=</code> narrows it to a situation, <code>?status=all</code> adds superseded and withdrawn entries. Inside a store, the <code>instructions</code> tool offers the entries a store has not met, and <code>help</code> suggests those that fit what you are about to do.</p>
+  </div>
+</main>
