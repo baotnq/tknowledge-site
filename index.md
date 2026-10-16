@@ -54,7 +54,7 @@ Your first sign-in opens a store of your own. Free: 100 writes a month, reads un
 
 # Knowledge Sovereignty
 
-The organisation decides what is knowledge. The AI proposes; a person signs.
+The organisation decides what is knowledge. AI agents propose; people sign.
 
 Data → information → knowledge. Data becomes information when it has structure — one idea, with names and dates. Information becomes knowledge when it can be trusted without checking again.
 
@@ -71,13 +71,13 @@ T(truth-trust-traceable)-knowledge holds the organisation's information and know
 
 ## Same claim, two outcomes.
 
-The AI proposes a claim. A person signs it. T-knowledge decides what it is: a fact (T) if it rests on evidence a stranger could open, a guess (A) if it rests on your word alone.
+AI agents propose claims. People sign them. T-knowledge decides what it is: a fact (T) if it rests on evidence a stranger could open, a guess (A) if it rests on your word alone.
 
 **T claim**
 
 1. T · Bao Trinh founded T-knowledge, https://tknowledge.org. · signed Bao Trinh 2026-10-13 · rests on the page footer
 
-1. The AI proposes the claim and opens https://tknowledge.org.
+1. An AI agent proposes the claim and opens https://tknowledge.org.
 2. It reads the page into a document: the text it saw, the link, the date it was read.
 3. It points at where in that document the claim is read — the footer line “Founder: Bao Trinh”.
 4. You sign. T-knowledge checks: evidence a stranger could open, a named signer, a path back to the document. All three present.
@@ -87,7 +87,7 @@ The AI proposes a claim. A person signs it. T-knowledge decides what it is: a fa
 
 1. A · Bao Trinh owns the website https://ankayma.com. · signed Bao Trinh 2026-10-07 · open until a WHOIS or registration record
 
-1. The AI proposes the claim and opens the page.
+1. An AI agent proposes the claim and opens the page.
 2. No name, no legal entity — only “© 2026 Ankayma” and a contact address.
 3. Your own word that you own it is not evidence. Asked to record it as a fact, T-knowledge refuses and says why.
 4. You sign it as a guess instead. It is kept as an A with the condition that would settle it: a WHOIS record or business registration naming Bao Trinh as owner.

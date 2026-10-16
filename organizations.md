@@ -2,13 +2,13 @@
 
 # My organisation runs AI agents.
 
-The agent proposes. A named person signs. Every trusted claim walks back to a dated source.
+AI agents propose. Named people sign. Every trusted claim walks back to a dated source.
 
 ## Which risk disappears.
 
 Today an AI agent writes into the organisation's records, and no one signs. A figure it computed, a summary it drew, a fact it read from a page — each can be wrong, and nothing shows which.
 
-With T-knowledge the agent proposes and a named person signs. Every trusted claim has a dated source and a trail back to it. Withdraw a premise, and everything standing on it is flagged for review — nothing quietly stays true.
+With T-knowledge, AI agents propose and named people sign. Every trusted claim has a dated source and a trail back to it. Withdraw a premise, and everything standing on it is flagged for review — nothing quietly stays true.
 
 Before money moves: who verified this figure, and from which source?
 

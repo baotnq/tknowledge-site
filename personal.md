@@ -31,7 +31,7 @@ The cost is the same each time: time, the irritation of explaining again and aga
 
 - One signer per store today: the store is yours, and only you sign.
 - Free: 100 writes a month, reads without limit, up to 100 words per claim. When the writes run out the store stays readable; they start again next month.
-- Works with Claude — web, Desktop, mobile and Claude Code. Other MCP clients connect with a key.
+- Works with Claude — web, Desktop, mobile and Claude Code — and with ChatGPT, signing in by email. For other AI agents, see [Connect](https://tknowledge.org/docs/#connect).
 - The store runs on our server. Self-hosting is planned; if you need it now, [write](mailto:hello@ankayma.com?subject=T-knowledge%20self-hosting).
 
 ## Readers are free. You pay for writes.

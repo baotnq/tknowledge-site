@@ -52,7 +52,7 @@ Status: not yet tried on Cursor.
 
 Your first sign-in opens a store of your own. Free: 100 writes a month, reads unlimited.
 
-Expected result: `instructions()` returns the meta lines M1–M3 and an index.
+Expected result: `instructions()` returns the meta lines M1–M2 and an index.
 
 A refused call is an answer, not a failure: it carries a code and `next`, the move still open. The codes are under Refusals.
 

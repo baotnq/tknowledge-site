@@ -54,7 +54,7 @@ Your first sign-in opens a store of your own. Free: 100 writes a month, reads un
 
 # Knowledge Sovereignty
 
-The organisation decides what is knowledge. The AI proposes; a person signs.
+The organisation decides what is knowledge. AI agents propose; people sign.
 
 Data → information → knowledge. Data becomes information when it has structure — one idea, with names and dates. Information becomes knowledge when it can be trusted without checking again.
 
@@ -71,13 +71,13 @@ T(truth-trust-traceable)-knowledge holds the organisation's information and know
 
 ## Same claim, two outcomes.
 
-The AI proposes a claim. A person signs it. T-knowledge decides what it is: a fact (T) if it rests on evidence a stranger could open, a guess (A) if it rests on your word alone.
+AI agents propose claims. People sign them. T-knowledge decides what it is: a fact (T) if it rests on evidence a stranger could open, a guess (A) if it rests on your word alone.
 
 **T claim**
 
 1. T · Bao Trinh founded T-knowledge, https://tknowledge.org. · signed Bao Trinh 2026-10-13 · rests on the page footer
 
-1. The AI proposes the claim and opens https://tknowledge.org.
+1. An AI agent proposes the claim and opens https://tknowledge.org.
 2. It reads the page into a document: the text it saw, the link, the date it was read.
 3. It points at where in that document the claim is read — the footer line “Founder: Bao Trinh”.
 4. You sign. T-knowledge checks: evidence a stranger could open, a named signer, a path back to the document. All three present.
@@ -87,7 +87,7 @@ The AI proposes a claim. A person signs it. T-knowledge decides what it is: a fa
 
 1. A · Bao Trinh owns the website https://ankayma.com. · signed Bao Trinh 2026-10-07 · open until a WHOIS or registration record
 
-1. The AI proposes the claim and opens the page.
+1. An AI agent proposes the claim and opens the page.
 2. No name, no legal entity — only “© 2026 Ankayma” and a contact address.
 3. Your own word that you own it is not evidence. Asked to record it as a fact, T-knowledge refuses and says why.
 4. You sign it as a guess instead. It is kept as an A with the condition that would settle it: a WHOIS record or business registration naming Bao Trinh as owner.
@@ -158,7 +158,7 @@ Status: not yet tried on Cursor.
 
 Your first sign-in opens a store of your own. Free: 100 writes a month, reads unlimited.
 
-Expected result: `instructions()` returns the meta lines M1–M3 and an index.
+Expected result: `instructions()` returns the meta lines M1–M2 and an index.
 
 A refused call is an answer, not a failure: it carries a code and `next`, the move still open. The codes are under Refusals.
 
@@ -280,7 +280,7 @@ The cost is the same each time: time, the irritation of explaining again and aga
 
 - One signer per store today: the store is yours, and only you sign.
 - Free: 100 writes a month, reads without limit, up to 100 words per claim. When the writes run out the store stays readable; they start again next month.
-- Works with Claude — web, Desktop, mobile and Claude Code. Other MCP clients connect with a key.
+- Works with Claude — web, Desktop, mobile and Claude Code — and with ChatGPT, signing in by email. For other AI agents, see [Connect](https://tknowledge.org/docs/#connect).
 - The store runs on our server. Self-hosting is planned; if you need it now, [write](mailto:hello@ankayma.com?subject=T-knowledge%20self-hosting).
 
 ## Readers are free. You pay for writes.
@@ -340,13 +340,13 @@ Founder: Bao Trinh — [baotrinh.com](https://baotrinh.com)
 
 # My organisation runs AI agents.
 
-The agent proposes. A named person signs. Every trusted claim walks back to a dated source.
+AI agents propose. Named people sign. Every trusted claim walks back to a dated source.
 
 ## Which risk disappears.
 
 Today an AI agent writes into the organisation's records, and no one signs. A figure it computed, a summary it drew, a fact it read from a page — each can be wrong, and nothing shows which.
 
-With T-knowledge the agent proposes and a named person signs. Every trusted claim has a dated source and a trail back to it. Withdraw a premise, and everything standing on it is flagged for review — nothing quietly stays true.
+With T-knowledge, AI agents propose and named people sign. Every trusted claim has a dated source and a trail back to it. Withdraw a premise, and everything standing on it is flagged for review — nothing quietly stays true.
 
 Before money moves: who verified this figure, and from which source?
 
